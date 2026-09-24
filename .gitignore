@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+data/raw/_fetch.log
+paper/*.docx
+paper/~$*

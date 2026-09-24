@@ -1,0 +1,17 @@
+,spearman_vs_headline
+S0 Equal weights (headline),0.9999999999999999
+S1 Domain weights (1/3 each domain),0.9999999999999999
+"S2 Payment-only (P,R)",0.7575757575757575
+"S3 Access-only (A,D)",0.6969696969696969
+S4 Price only (P),0.8181818181818182
+S5 Geometric aggregation,0.9878787878787878
+S6 z-score normalisation,0.9878787878787878
+S7 Rank normalisation,0.9300954818304988
+S8 Income-adjusted price,0.9393939393939393
+S9 New-drug revenue ratio,0.9878787878787878
+S10 Excluding United States (rescaled),0.9333333333333332
+drop_P,0.9636363636363635
+drop_R,0.9878787878787878
+drop_A,0.9999999999999999
+drop_D,0.9999999999999999
+drop_I,0.8545454545454544

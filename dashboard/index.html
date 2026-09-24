@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free-Rider Index</title>
+<meta name="description" content="Interactive companion to a multi-dimensional index of free-riding on pharmaceutical innovation across ten high-income countries.">
+<style>
+:root{--bg:#ffffff;--fg:#1a1a1a;--muted:#5f6368;--line:#e3e3e3;--card:#f7f7f8;--accent:#1f4e79;--bar:#2e75b6;--us:#9aa5b1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111316;--fg:#ececec;--muted:#a0a6ad;--line:#2a2e33;--card:#1a1d21;--accent:#7fb3e0;--bar:#5b9bd5;--us:#5e6a75}}
+:root[data-theme="dark"]{--bg:#111316;--fg:#ececec;--muted:#a0a6ad;--line:#2a2e33;--card:#1a1d21;--accent:#7fb3e0;--bar:#5b9bd5;--us:#5e6a75}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 Georgia,"Times New Roman",serif}
+main{max-width:920px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:28px;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 22px;font-size:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 18px}
+label{display:block;font-size:13px;color:var(--muted)}
+input[type=range]{width:100%}
+.val{font-variant-numeric:tabular-nums;color:var(--fg)}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--muted)}
+button{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:6px;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.barcell{width:42%}
+.bar{height:12px;background:var(--bar);border-radius:3px}
+.bar.us{background:var(--us)}
+.foot{font-size:13px;color:var(--muted)}
+.foot a{color:var(--accent)}
+.small{font-size:12.5px;color:var(--muted)}
+@media (max-width:600px){th,td{padding:6px 5px;font-size:13px}.barcell{width:30%}}
+</style>
+</head>
+<body>
+<main>
+<h1>Free-Rider Index</h1>
+<p class="sub">Who pays for pharmaceutical innovation? Ten high-income countries, five measurable components, one adjustable score.</p>
+
+<div class="card">
+<p style="margin:0 0 10px">The index combines five published indicators. Higher scores mean a country pays less, waits longer, or invests less relative to the others. Move the sliders to change the weights; the ranking updates immediately.</p>
+<div class="controls" id="controls"></div>
+<div class="row">
+  <span>Normalisation:</span>
+  <label style="display:inline"><input type="radio" name="norm" value="minmax" checked> min–max</label>
+  <label style="display:inline"><input type="radio" name="norm" value="rank"> rank</label>
+  <label style="display:inline"><input type="radio" name="norm" value="zscore"> z-score</label>
+  <label style="display:inline;margin-left:8px"><input type="checkbox" id="exus"> exclude United States</label>
+  <button id="reset">Reset to equal weights</button>
+</div>
+</div>
+
+<div class="card">
+<table id="tbl"><thead><tr><th>#</th><th>Country</th><th class="barcell">Index (0–100)</th><th class="n">Score</th><th class="n" title="Median rank and 5th–95th percentile across 10,000 weight, normalisation and aggregation choices">Rank range*</th></tr></thead><tbody></tbody></table>
+<p class="small">*Median rank and 5th–95th percentile range across 10,000 random specifications (weights, normalisation, aggregation, ±10% input noise), computed for the published equal-weight design. Shown for reference; it does not change with the sliders.</p>
+</div>
+
+<div class="card">
+<table id="raw"><thead></thead><tbody></tbody></table>
+<p class="small" id="rawnote"></p>
+</div>
+
+<p class="foot">
+Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) innovative-drug revenue shares 2020–2025; Philipson et al. (2026) reimbursement timing for 225 US-first drugs; OECD business R&D by industry (ISIC 21); World Bank GDP. Full sources, code and the manuscript: <a href="https://github.com/YoshiSaitoDrPH/pharma-freerider-index">github.com/YoshiSaitoDrPH/pharma-freerider-index</a>. Generated <span id="gen"></span>.
+</p>
+</main>
+<script id="data" type="application/json">{
+ "generated": "2026-09-24",
+ "components": {
+  "P": {
+   "column": "price_index_all_us100",
+   "direction": -1,
+   "label": "Relative price level (% of US, all drugs)",
+   "domain": "Payment"
+  },
+  "R": {
+   "column": "rev_to_gdp_ratio_all_innov",
+   "direction": -1,
+   "label": "Innovative-drug revenue share / GDP share",
+   "domain": "Payment"
+  },
+  "A": {
+   "column": "reimb_share_2023_pct",
+   "direction": -1,
+   "label": "Share of US-first new drugs publicly reimbursed by 2023",
+   "domain": "Access"
+  },
+  "D": {
+   "column": "reimb_delay_years",
+   "direction": 1,
+   "label": "Mean reimbursement delay after US launch (years)",
+   "domain": "Access"
+  },
+  "I": {
+   "column": "pharma_berd_pct_gdp",
+   "direction": -1,
+   "label": "Pharmaceutical business R&D (% of GDP)",
+   "domain": "R&D input"
+  }
+ },
+ "countries": [
+  {
+   "iso3": "USA",
+   "name": "United States",
+   "raw": {
+    "P": 100.0,
+    "R": 1.94,
+    "A": 100.0,
+    "D": 0.0,
+    "I": 0.533
+   },
+   "raw_alt": {
+    "price_index_income_adj": 100.0,
+    "rev_to_gdp_ratio_new_innov": 2.32
+   },
+   "gdp_pc_ppp_usd": 90026.5163005744,
+   "rev_share_all_innov_pct": 66.98,
+   "headline": {
+    "FRI": 3.949084138418559,
+    "rank": 10
+   },
+   "mc": {
+    "rank_median": 10.0,
+    "rank_p05": 10.0,
+    "rank_p95": 10.0
+   }
+  },
+  {
+   "iso3": "JPN",
+   "name": "Japan",
+   "raw": {
+    "P": 51.03,
+    "R": 0.73,
+    "A": 56.4,
+    "D": 2.0,
+    "I": 0.262
+   },
+   "raw_alt": {
+    "price_index_income_adj": 82.89240905018303,
+    "rev_to_gdp_ratio_new_innov": 0.68
+   },
+   "gdp_pc_ppp_usd": 55421.8797530311,
+   "rev_share_all_innov_pct": 5.83,
+   "headline": {
+    "FRI": 67.32923886300637,
+    "rank": 7
+   },
+   "mc": {
+    "rank_median": 7.0,
+    "rank_p05": 5.0,
+    "rank_p95": 9.0
+   }
+  },
+  {
+   "iso3": "DEU",
+   "name": "Germany",
+   "raw": {
+    "P": 44.86,
+    "R": 0.58,
+    "A": 72.9,
+    "D": 1.11,
+    "I": 0.248
+   },
+   "raw_alt": {
+    "price_index_income_adj": 53.55744410628424,
+    "rev_to_gdp_ratio_new_innov": 0.45
+   },
+   "gdp_pc_ppp_usd": 75406.6888111618,
+   "rev_share_all_innov_pct": 4.32,
+   "headline": {
+    "FRI": 60.64536993724587,
+    "rank": 8
+   },
+   "mc": {
+    "rank_median": 8.0,
+    "rank_p05": 6.0,
+    "rank_p95": 9.0
+   }
+  },
+  {
+   "iso3": "FRA",
+   "name": "France",
+   "raw": {
+    "P": 40.34,
+    "R": 0.67,
+    "A": 62.2,
+    "D": 2.28,
+    "I": 0.209
+   },
+   "raw_alt": {
+    "price_index_income_adj": 56.7666994241924,
+    "rev_to_gdp_ratio_new_innov": 0.36
+   },
+   "gdp_pc_ppp_usd": 63975.353585864,
+   "rev_share_all_innov_pct": 3.43,
+   "headline": {
+    "FRI": 72.82224903971398,
+    "rank": 5
+   },
+   "mc": {
+    "rank_median": 5.0,
+    "rank_p05": 4.0,
+    "rank_p95": 7.0
+   }
+  },
+  {
+   "iso3": "GBR",
+   "name": "United Kingdom",
+   "raw": {
+    "P": 38.21,
+    "R": 0.56,
+    "A": 64.0,
+    "D": 2.34,
+    "I": 0.322
+   },
+   "raw_alt": {
+    "price_index_income_adj": 53.24407647976722,
+    "rev_to_gdp_ratio_new_innov": 0.39
+   },
+   "gdp_pc_ppp_usd": 64606.4955066338,
+   "rev_share_all_innov_pct": 2.78,
+   "headline": {
+    "FRI": 70.998325836227,
+    "rank": 6
+   },
+   "mc": {
+    "rank_median": 5.0,
+    "rank_p05": 3.0,
+    "rank_p95": 8.0
+   }
+  },
+  {
+   "iso3": "ITA",
+   "name": "Italy",
+   "raw": {
+    "P": 39.97,
+    "R": 0.76,
+    "A": 68.0,
+    "D": 2.21,
+    "I": 0.104
+   },
+   "raw_alt": {
+    "price_index_income_adj": 57.29643303261363,
+    "rev_to_gdp_ratio_new_innov": 0.34
+   },
+   "gdp_pc_ppp_usd": 62802.5108384276,
+   "rev_share_all_innov_pct": 3.25,
+   "headline": {
+    "FRI": 72.92788735939668,
+    "rank": 4
+   },
+   "mc": {
+    "rank_median": 5.0,
+    "rank_p05": 4.0,
+    "rank_p95": 8.0
+   }
+  },
+  {
+   "iso3": "CAN",
+   "name": "Canada",
+   "raw": {
+    "P": 47.63,
+    "R": 0.74,
+    "A": 36.4,
+    "D": 3.13,
+    "I": 0.0212453353631513
+   },
+   "raw_alt": {
+    "price_index_income_adj": 64.24316398271782,
+    "rev_to_gdp_ratio_new_innov": 0.31
+   },
+   "gdp_pc_ppp_usd": 66745.8248561648,
+   "rev_share_all_innov_pct": 2.35,
+   "headline": {
+    "FRI": 89.097430739835,
+    "rank": 3
+   },
+   "mc": {
+    "rank_median": 3.0,
+    "rank_p05": 1.0,
+    "rank_p95": 6.0
+   }
+  },
+  {
+   "iso3": "CHE",
+   "name": "Switzerland",
+   "raw": {
+    "P": 55.74,
+    "R": 0.61,
+    "A": 54.2,
+    "D": 2.17,
+    "I": 0.6589094649992122
+   },
+   "raw_alt": {
+    "price_index_income_adj": 48.950484542583055,
+    "rev_to_gdp_ratio_new_innov": 0.29
+   },
+   "gdp_pc_ppp_usd": 102513.347221899,
+   "rev_share_all_innov_pct": 0.62,
+   "headline": {
+    "FRI": 56.595860197068305,
+    "rank": 9
+   },
+   "mc": {
+    "rank_median": 9.0,
+    "rank_p05": 5.0,
+    "rank_p95": 9.0
+   }
+  },
+  {
+   "iso3": "AUS",
+   "name": "Australia",
+   "raw": {
+    "P": 36.3,
+    "R": 0.49,
+    "A": 44.4,
+    "D": 2.87,
+    "I": 0.035
+   },
+   "raw_alt": {
+    "price_index_income_adj": 45.42975805125147,
+    "rev_to_gdp_ratio_new_innov": 0.44
+   },
+   "gdp_pc_ppp_usd": 71934.4033931263,
+   "rev_share_all_innov_pct": 1.09,
+   "headline": {
+    "FRI": 90.84027388165121,
+    "rank": 2
+   },
+   "mc": {
+    "rank_median": 2.0,
+    "rank_p05": 1.0,
+    "rank_p95": 3.0
+   }
+  },
+  {
+   "iso3": "KOR",
+   "name": "South Korea",
+   "raw": {
+    "P": 33.64,
+    "R": 0.21,
+    "A": 36.4,
+    "D": 3.22,
+    "I": 0.1055262165704629
+   },
+   "raw_alt": {
+    "price_index_income_adj": 47.97617545901053,
+    "rev_to_gdp_ratio_new_innov": 0.05
+   },
+   "gdp_pc_ppp_usd": 63124.9152183625,
+   "rev_share_all_innov_pct": 0.83,
+   "headline": {
+    "FRI": 97.35657449461948,
+    "rank": 1
+   },
+   "mc": {
+    "rank_median": 1.0,
+    "rank_p05": 1.0,
+    "rank_p95": 2.0
+   }
+  }
+ ],
+ "pca": {
+  "explained_variance_ratio": [
+   0.793888762675181,
+   0.1178040811665904,
+   0.07546123048231938,
+   0.01215445976829913,
+   0.0006914659076101588
+  ],
+  "loadings_PC1": {
+   "P": 0.9326569139080976,
+   "R": 0.9175018394052052,
+   "A": 0.9157075048899527,
+   "D": 0.9496090888966808,
+   "I": 0.7193800197228352
+  }
+ }
+}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const keys = Object.keys(D.components);
+const short = {P:'Price level',R:'Revenue / GDP',A:'Availability',D:'Delay',I:'Pharma R&D'};
+const w = {}; keys.forEach(k => w[k] = 1);
+const ctr = document.getElementById('controls');
+keys.forEach(k => {
+  const div = document.createElement('div');
+  div.innerHTML = `<label>${short[k]} <span class="val" id="v${k}">1.0</span></label><input type="range" min="0" max="3" step="0.1" value="1" id="w${k}">`;
+  ctr.appendChild(div);
+  div.querySelector('input').addEventListener('input', e => { w[k] = +e.target.value; document.getElementById('v'+k).textContent = (+e.target.value).toFixed(1); render(); });
+});
+document.querySelectorAll('input[name=norm]').forEach(r => r.addEventListener('change', render));
+document.getElementById('exus').addEventListener('change', render);
+document.getElementById('reset').addEventListener('click', () => { keys.forEach(k => { w[k]=1; document.getElementById('w'+k).value=1; document.getElementById('v'+k).textContent='1.0'; }); render(); });
+document.getElementById('gen').textContent = D.generated;
+
+function normalise(vals, dir, method){
+  const x = vals.map(v => v*dir);
+  if(method==='rank'){ const s=[...x].sort((a,b)=>a-b); return x.map(v => (s.indexOf(v))/(x.length-1)*100); }
+  if(method==='zscore'){ const m=x.reduce((a,b)=>a+b,0)/x.length; const sd=Math.sqrt(x.reduce((a,b)=>a+(b-m)**2,0)/x.length); return x.map(v=>(v-m)/sd*20+50); }
+  const mn=Math.min(...x), mx=Math.max(...x); return x.map(v => (v-mn)/(mx-mn)*100);
+}
+function render(){
+  const method = document.querySelector('input[name=norm]:checked').value;
+  const exus = document.getElementById('exus').checked;
+  const C = D.countries.filter(c => !(exus && c.iso3==='USA'));
+  const S = {}; keys.forEach(k => { S[k] = normalise(C.map(c => c.raw[k]), D.components[k].direction, method); });
+  const wsum = keys.reduce((a,k)=>a+w[k],0) || 1;
+  const rows = C.map((c,i) => ({c, fri: keys.reduce((a,k)=>a + w[k]*S[k][i], 0)/wsum}));
+  rows.sort((a,b)=>b.fri-a.fri);
+  const tb = document.querySelector('#tbl tbody'); tb.innerHTML='';
+  rows.forEach((r,i) => {
+    const tr = document.createElement('tr');
+    const mc = r.c.mc;
+    tr.innerHTML = `<td>${i+1}</td><td>${r.c.name}</td><td class="barcell"><div class="bar ${r.c.iso3==='USA'?'us':''}" style="width:${Math.max(1,r.fri)}%"></div></td><td class="n">${r.fri.toFixed(1)}</td><td class="n">${mc.rank_median.toFixed(0)} (${mc.rank_p05.toFixed(0)}–${mc.rank_p95.toFixed(0)})</td>`;
+    tb.appendChild(tr);
+  });
+}
+// raw data table
+(function(){
+  const th = document.querySelector('#raw thead'); const tb = document.querySelector('#raw tbody');
+  th.innerHTML = '<tr><th>Country</th>' + keys.map(k=>`<th class="n" title="${D.components[k].label}">${short[k]}</th>`).join('') + '</tr>';
+  D.countries.forEach(c => { const tr=document.createElement('tr'); tr.innerHTML = `<td>${c.name}</td>` + keys.map(k => `<td class="n">${c.raw[k]==null?'—':(+c.raw[k]).toFixed(2)}</td>`).join(''); tb.appendChild(tr); });
+  document.getElementById('rawnote').textContent = 'Raw inputs: ' + keys.map(k => short[k] + ' = ' + D.components[k].label).join('; ') + '.';
+})();
+render();
+</script>
+</body>
+</html>

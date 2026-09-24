@@ -1,0 +1,34 @@
+variable,source_id,year
+frech_contribution_usd_bn,FRECH2026,2018
+kolchinsky_freeriding_index_pct,KOLCHINSKY2025,2022 prices
+price_index_all_us100,RAND2024,2022
+price_index_brand_us100,RAND2024,2022
+rand_sales_2022_usd_bn,RAND2024,2022
+reimb_delay_years,PHILIPSON2026,2014-2019 cohort
+reimb_share_2023_pct,PHILIPSON2026,2014-2019 cohort
+rev_share_all_innov_pct,ASPE2026,2020-2025
+rev_share_new_innov_pct,ASPE2026,2020-2025
+rev_to_gdp_ratio_all_innov,ASPE2026,2020-2025
+rev_to_gdp_ratio_new_innov,ASPE2026,2020-2025
+rev_to_pop_ratio_all_innov,ASPE2026,2020-2025
+wait_availability_pct,EFPIA_WAIT2025,2021-2024 cohort
+wait_mean_days,EFPIA_WAIT2025,2021-2024 cohort
+wait_median_days,EFPIA_WAIT2025,2021-2024 cohort
+gdp_pc_ppp_usd,WB_WDI,latest available
+gdp_pc_usd,WB_WDI,latest available
+population,WB_WDI,latest available
+gdp_ppp_usd,WB_WDI,latest available
+gdp_usd,WB_WDI,latest available
+pharma_berd_pct_gdp,OECD_BERD + WB_WDI,latest (2021-2023)
+pharma_berd_pct_gdp (USA fallback),NCSES_BERD2023,2023
+pharma_berd_pct_gdp (JPN fallback),MIC_KAGAKU2025,2024
+pharma_berd_pct_gdp (DEU fallback),EFPIA_FIGURES2026,2024
+pharma_berd_pct_gdp (FRA fallback),EFPIA_FIGURES2026,2023
+pharma_berd_pct_gdp (ITA fallback),EFPIA_FIGURES2026,2024
+pharma_berd_pct_gdp (GBR override),ONS_BERD2024_ABPI,2024
+pharma_berd_usd_ppp_m (GBR override),ONS_BERD2024_ABPI,2024
+pharma_berd_year (GBR override),ONS_BERD2024_ABPI,2024
+pharma_berd_pct_gdp (AUS override),ABS_BERD2023_24,2024
+pharma_berd_usd_ppp_m (AUS override),ABS_BERD2023_24,2023-24
+pharma_berd_year (AUS override),ABS_BERD2023_24,2023-24
+rd_tax_subsidy_*,OECD_RDTAX,2025

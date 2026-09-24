@@ -1,0 +1,6 @@
+iso3,variable,value,unit,year,source_id,source_note
+USA,pharma_berd_pct_gdp,0.533,percent of GDP,2023,NCSES_BERD2023,"NCSES Business Enterprise R&D 2023 (NSF 25-354): NAICS 3254 pharmaceuticals and medicines, domestic R&D performed USD 148,160 million / GDP 2023 USD 27,811,517 million (World Bank NY.GDP.MKTP.CN). Industry-of-performer basis. Used only if OECD ISIC C21 is unavailable."
+JPN,pharma_berd_pct_gdp,0.262,percent of GDP,2024,MIC_KAGAKU2025,"MIC 2025 Survey of Research and Development: pharmaceutical manufacturing in-house R&D JPY 1,660.7 billion (FY2024) / GDP 2024 JPY 634,226 billion. Industry basis. Used only if OECD ISIC C21 is unavailable."
+DEU,pharma_berd_pct_gdp,0.248,percent of GDP,2024,EFPIA_FIGURES2026,"EFPIA Key Data 2026: Germany pharmaceutical R&D EUR 10,728 million (2024, member-association basis) / GDP 2024 EUR 4,328,970 million. Used only if OECD ISIC C21 is unavailable."
+FRA,pharma_berd_pct_gdp,0.209,percent of GDP,2023,EFPIA_FIGURES2026,"EFPIA Key Data 2026: France pharmaceutical R&D EUR 5,900 million (2023 data) / GDP 2023 EUR 2,826,542 million. Used only if OECD ISIC C21 is unavailable."
+ITA,pharma_berd_pct_gdp,0.104,percent of GDP,2024,EFPIA_FIGURES2026,"EFPIA Key Data 2026: Italy pharmaceutical R&D EUR 2,300 million (2024) / GDP 2024 EUR 2,202,031 million. Used only if OECD ISIC C21 is unavailable."
