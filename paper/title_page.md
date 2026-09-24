@@ -8,17 +8,17 @@ Department of Health Economics and Outcomes Research, Graduate School of Pharmac
 
 **Corresponding author:** Yoshiyuki Saito, PharmD, DrPH. Graduate School of Pharmaceutical Sciences, The University of Tokyo, 7-3-1 Hongo, Bunkyo-ku, Tokyo 113-0033, Japan. E-mail: [to be confirmed]. ORCID: 0000-0002-8226-9219
 
-**Précis:** A five-component index shows that price-only comparisons misidentify which high-income countries pay less, wait longer, and invest less in pharmaceutical innovation.
+**Précis:** A five-component index shows that payment and adoption channels of pharmaceutical free-riding are nearly independent, so price-only comparisons misidentify countries and levers.
 
 **Word count:** [insert from build log] (excluding abstract, references, figure legends, tables, appendices)
 
 **Number of pages:** [insert]
 
-**Number of figures:** 4 (Figure 1 has parts A and B, counted as 2 graphic elements)
+**Number of figures:** 3 (Figure 1 has parts A and B; 4 graphic elements)
 
 **Number of tables:** 2
 
-**Appendices/supplemental materials:** 1 file. Pages: [insert]; Figures: 2; Tables: 6
+**Appendices/supplemental materials:** 1 file. Pages: [insert]; Figures: 4; Tables: 11
 
 **Authorship Confirmation:** The author certifies that he meets the ICMJE criteria for authorship.
 

@@ -1,0 +1,10 @@
+iso3,country,−JPN,−DEU,−FRA,−GBR,−ITA,−CAN,−CHE,−AUS,−KOR
+JPN,Japan,,5,4,5,5,4,6,4,5
+DEU,Germany,7,,7,7,7,7,8,7,6
+FRA,France,4,4,,4,4,3,4,3,3
+GBR,United Kingdom,5,6,5,,6,5,7,5,4
+ITA,Italy,6,7,6,6,,6,5,6,7
+CAN,Canada,3,3,3,3,3,,3,2,2
+CHE,Switzerland,8,8,8,8,8,8,,8,8
+AUS,Australia,2,2,2,2,2,2,2,,1
+KOR,South Korea,1,1,1,1,1,1,1,1,

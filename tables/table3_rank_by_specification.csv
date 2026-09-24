@@ -1,11 +1,11 @@
-iso3,country,S0 Equal weights (headline),S1 Domain weights (1/3 each domain),"S2 Payment-only (P,R)","S3 Access-only (A,D)",S4 Price only (P),S5 Geometric aggregation,S6 z-score normalisation,S7 Rank normalisation,S8 Income-adjusted price,S9 New-drug revenue ratio,S10 Excluding United States (rescaled),S11 Association-basis pharma R&D,drop_P,drop_R,drop_A,drop_D,drop_I
-AUS,Australia,2.0,2.0,2.0,3.0,2.0,2.0,2.0,2.0,2.0,3.0,2.0,2.0,3.0,3.0,2.0,2.0,2.0
-CAN,Canada,3.0,3.0,7.0,2.0,7.0,3.0,3.0,3.0,3.0,2.0,3.0,3.0,2.0,2.0,3.0,3.0,3.0
-CHE,Switzerland,9.0,9.0,9.0,4.0,9.0,9.0,9.0,8.0,8.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,6.0
-DEU,Germany,8.0,8.0,5.0,9.0,6.0,8.0,8.0,7.0,7.0,8.0,8.0,8.0,8.0,8.0,7.0,6.0,9.0
-FRA,France,4.0,4.0,4.0,6.0,5.0,4.0,4.0,5.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,5.0
-GBR,United Kingdom,6.0,6.0,3.0,7.0,3.0,6.0,6.0,4.0,6.0,6.0,5.0,5.0,7.0,6.0,6.0,7.0,4.0
-ITA,Italy,5.0,5.0,6.0,8.0,4.0,5.0,5.0,6.0,5.0,5.0,6.0,6.0,5.0,5.0,5.0,5.0,7.0
-JPN,Japan,7.0,7.0,8.0,5.0,8.0,7.0,7.0,8.0,9.0,7.0,7.0,7.0,6.0,7.0,8.0,8.0,8.0
-KOR,South Korea,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
-USA,United States,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,,10.0,10.0,10.0,10.0,10.0,10.0
+iso3,country,"S0 Headline (nine countries, equal weights)",S1 Domain weights (1/3 each),"S2 Payment only (P,R)","S3 Adoption only (A,D)",S4 Price only (P),S5 Geometric aggregation,S6 z-score normalisation,S7 Rank normalisation,S8 Log min-max normalisation,S9 All-drug price index,S10 Income-adjusted brand price,S11 Ability-to-pay adjusted payment,S12 US net-price adjustment,S13 New-drug revenue ratio,S14 Delay imputed for non-reimbursed drugs,S15 W.A.I.T. adoption data for EU-5,S16 Association-basis pharma R&D,S17 Trial hosting replaces R&D input,"S18 R&D input dropped (P,R,A,D)",S19 Six components (+ R&D tax subsidy),"S20 Seven components (+ tax, + trials)",S21 Size-adjusted (residual on log GDP),S22 Ten countries including United States,drop_P,drop_R,drop_A,drop_D,drop_I
+USA,United States,,,,,,,,,,,,,,,,,,,,,,,10.0,,,,,
+JPN,Japan,5.0,5.0,6.0,5.0,3.0,5.0,5.0,6.0,5.0,7.0,7.0,7.0,5.0,7.0,5.0,5.0,5.0,3.0,5.0,4.0,4.0,5.0,6.0,7.0,5.0,6.0,5.0,5.0
+DEU,Germany,8.0,8.0,5.0,9.0,5.0,9.0,8.0,7.0,9.0,8.0,9.0,9.0,8.0,9.0,9.0,8.0,8.0,9.0,9.0,9.0,9.0,8.0,8.0,9.0,8.0,8.0,7.0,9.0
+FRA,France,4.0,4.0,3.0,6.0,4.0,3.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,5.0,4.0,7.0,7.0,4.0,4.0,4.0,4.0,3.0,4.0,4.0
+GBR,United Kingdom,6.0,7.0,4.0,7.0,6.0,4.0,6.0,5.0,7.0,5.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,7.0,5.0,7.0,5.0,6.0,6.0
+ITA,Italy,7.0,6.0,8.0,8.0,7.0,7.0,7.0,7.0,6.0,6.0,8.0,8.0,7.0,5.0,7.0,7.0,7.0,8.0,8.0,5.0,5.0,7.0,5.0,6.0,6.0,7.0,8.0,8.0
+CAN,Canada,3.0,3.0,9.0,2.0,9.0,6.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,4.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,4.0,3.0,3.0
+CHE,Switzerland,9.0,9.0,7.0,4.0,8.0,8.0,9.0,7.0,8.0,9.0,5.0,5.0,9.0,8.0,8.0,9.0,9.0,7.0,7.0,8.0,8.0,9.0,9.0,8.0,9.0,9.0,9.0,7.0
+AUS,Australia,2.0,2.0,2.0,3.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+KOR,South Korea,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0

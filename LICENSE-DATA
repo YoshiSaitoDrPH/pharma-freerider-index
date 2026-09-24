@@ -1,0 +1,4 @@
+Data compilation and documentation in this repository (data/raw/manual_inputs.csv, data/raw/*.csv authored here,
+data/processed/*, docs/, paper/*.md) are licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ . Code is licensed under the MIT License (see LICENSE).
+Third-party data remain subject to their original terms; see THIRD_PARTY_DATA.md.

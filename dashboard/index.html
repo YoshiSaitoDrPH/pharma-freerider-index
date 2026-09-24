@@ -39,21 +39,23 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 <p class="sub">Who pays for pharmaceutical innovation? Ten high-income countries, five measurable components, one adjustable score.</p>
 
 <div class="card">
-<p style="margin:0 0 10px">The index combines five published indicators. Higher scores mean a country pays less, waits longer, or invests less relative to the others. Move the sliders to change the weights; the ranking updates immediately.</p>
+<p style="margin:0 0 10px">The index combines five published indicators. Higher scores mean a country pays less for brand-name medicines, reimburses fewer new drugs after a longer interval, or performs less pharmaceutical R&D relative to the others. Move the sliders to change the weights; the ranking updates immediately.</p>
 <div class="controls" id="controls"></div>
 <div class="row">
   <span>Normalisation:</span>
   <label style="display:inline"><input type="radio" name="norm" value="minmax" checked> min–max</label>
   <label style="display:inline"><input type="radio" name="norm" value="rank"> rank</label>
   <label style="display:inline"><input type="radio" name="norm" value="zscore"> z-score</label>
-  <label style="display:inline;margin-left:8px"><input type="checkbox" id="exus"> exclude United States</label>
+  <label style="display:inline;margin-left:8px"><input type="checkbox" id="exus" checked> exclude United States (numéraire)</label>
+  <label style="display:inline;margin-left:8px"><input type="checkbox" id="contrib"> show as contribution score (100 − index)</label>
   <button id="reset">Reset to equal weights</button>
+  <button id="dl">Download current weights (JSON)</button>
 </div>
 </div>
 
 <div class="card">
 <table id="tbl"><thead><tr><th>#</th><th>Country</th><th class="barcell">Index (0–100)</th><th class="n">Score</th><th class="n" title="Median rank and 5th–95th percentile across 10,000 weight, normalisation and aggregation choices">Rank range*</th></tr></thead><tbody></tbody></table>
-<p class="small">*Median rank and 5th–95th percentile range across 10,000 random specifications (weights, normalisation, aggregation, ±10% input noise), computed for the published equal-weight design. Shown for reference; it does not change with the sliders.</p>
+<p class="small">*Median rank and 5th–95th percentile range across 10,000 random specifications (weights, normalisation, aggregation, calibrated input noise and alternative data sources) for the published nine-country design (rank 1 = most apparent free-riding). The United States is the reference point for price, availability and interval and is not ranked. Shown for reference; it does not change with the sliders or with the contribution-score view.</p>
 </div>
 
 <div class="card">
@@ -66,12 +68,12 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
 </p>
 </main>
 <script id="data" type="application/json">{
- "generated": "2026-09-24",
+ "generated": "2026-09-25",
  "components": {
   "P": {
-   "column": "price_index_all_us100",
+   "column": "price_index_brand_us100",
    "direction": -1,
-   "label": "Relative price level (% of US, all drugs)",
+   "label": "Brand-name originator price level (% of US)",
    "domain": "Payment"
   },
   "R": {
@@ -84,13 +86,13 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
    "column": "reimb_share_2023_pct",
    "direction": -1,
    "label": "Share of US-first new drugs publicly reimbursed by 2023",
-   "domain": "Access"
+   "domain": "Adoption"
   },
   "D": {
    "column": "reimb_delay_years",
    "direction": 1,
-   "label": "Mean reimbursement delay after US launch (years)",
-   "domain": "Access"
+   "label": "Mean interval from US launch to public reimbursement (y)",
+   "domain": "Adoption"
   },
   "I": {
    "column": "pharma_berd_pct_gdp",
@@ -110,45 +112,30 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
     "D": 0.0,
     "I": 0.4510525467773194
    },
-   "raw_alt": {
-    "price_index_income_adj": 100.0,
-    "rev_to_gdp_ratio_new_innov": 2.32
-   },
    "gdp_pc_ppp_usd": 90026.5163005744,
    "rev_share_all_innov_pct": 66.98,
-   "headline": {
-    "FRI": 6.51932290249805,
-    "rank": 10
-   },
-   "mc": {
-    "rank_median": 10.0,
-    "rank_p05": 10.0,
-    "rank_p95": 10.0
-   }
+   "headline": null,
+   "mc": null
   },
   {
    "iso3": "JPN",
    "name": "Japan",
    "raw": {
-    "P": 51.03,
+    "P": 21.54,
     "R": 0.73,
     "A": 56.4,
     "D": 2.0,
     "I": 0.2459854231261906
    },
-   "raw_alt": {
-    "price_index_income_adj": 82.89240905018303,
-    "rev_to_gdp_ratio_new_innov": 0.68
-   },
    "gdp_pc_ppp_usd": 55421.8797530311,
    "rev_share_all_innov_pct": 5.83,
    "headline": {
-    "FRI": 67.83152764261672,
-    "rank": 7
+    "FRI": 42.72782835435618,
+    "rank": 5
    },
    "mc": {
-    "rank_median": 7.0,
-    "rank_p05": 5.0,
+    "rank_median": 6.0,
+    "rank_p05": 3.0,
     "rank_p95": 9.0
    }
   },
@@ -156,25 +143,21 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
    "iso3": "DEU",
    "name": "Germany",
    "raw": {
-    "P": 44.86,
+    "P": 25.84,
     "R": 0.58,
     "A": 72.9,
     "D": 1.11,
     "I": 0.1500967411338902
    },
-   "raw_alt": {
-    "price_index_income_adj": 53.55744410628424,
-    "rev_to_gdp_ratio_new_innov": 0.45
-   },
    "gdp_pc_ppp_usd": 75406.6888111618,
    "rev_share_all_innov_pct": 4.32,
    "headline": {
-    "FRI": 63.71605415220984,
+    "FRI": 28.54138000271071,
     "rank": 8
    },
    "mc": {
     "rank_median": 8.0,
-    "rank_p05": 6.0,
+    "rank_p05": 5.0,
     "rank_p95": 9.0
    }
   },
@@ -182,50 +165,42 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
    "iso3": "FRA",
    "name": "France",
    "raw": {
-    "P": 40.34,
+    "P": 22.47,
     "R": 0.67,
     "A": 62.2,
     "D": 2.28,
     "I": 0.0723109634888184
    },
-   "raw_alt": {
-    "price_index_income_adj": 56.7666994241924,
-    "rev_to_gdp_ratio_new_innov": 0.36
-   },
    "gdp_pc_ppp_usd": 63975.353585864,
    "rev_share_all_innov_pct": 3.43,
    "headline": {
-    "FRI": 77.1094287683023,
+    "FRI": 48.714340236819055,
     "rank": 4
    },
    "mc": {
     "rank_median": 4.0,
     "rank_p05": 3.0,
-    "rank_p95": 6.0
+    "rank_p95": 7.0
    }
   },
   {
    "iso3": "GBR",
    "name": "United Kingdom",
    "raw": {
-    "P": 38.21,
+    "P": 25.99,
     "R": 0.56,
     "A": 64.0,
     "D": 2.34,
     "I": 0.322
    },
-   "raw_alt": {
-    "price_index_income_adj": 53.24407647976722,
-    "rev_to_gdp_ratio_new_innov": 0.39
-   },
    "gdp_pc_ppp_usd": 64606.4955066338,
    "rev_share_all_innov_pct": 2.78,
    "headline": {
-    "FRI": 70.998325836227,
+    "FRI": 40.23208066888381,
     "rank": 6
    },
    "mc": {
-    "rank_median": 6.0,
+    "rank_median": 5.0,
     "rank_p05": 3.0,
     "rank_p95": 8.0
    }
@@ -234,77 +209,65 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
    "iso3": "ITA",
    "name": "Italy",
    "raw": {
-    "P": 39.97,
+    "P": 28.15,
     "R": 0.76,
     "A": 68.0,
     "D": 2.21,
     "I": 0.0379538004542909
    },
-   "raw_alt": {
-    "price_index_income_adj": 57.29643303261363,
-    "rev_to_gdp_ratio_new_innov": 0.34
-   },
    "gdp_pc_ppp_usd": 62802.5108384276,
    "rev_share_all_innov_pct": 3.25,
    "headline": {
-    "FRI": 74.99939166632403,
-    "rank": 5
+    "FRI": 35.846589747047446,
+    "rank": 7
    },
    "mc": {
-    "rank_median": 5.0,
-    "rank_p05": 4.0,
-    "rank_p95": 8.0
+    "rank_median": 6.0,
+    "rank_p05": 3.0,
+    "rank_p95": 9.0
    }
   },
   {
    "iso3": "CAN",
    "name": "Canada",
    "raw": {
-    "P": 47.63,
+    "P": 30.86,
     "R": 0.74,
     "A": 36.4,
     "D": 3.13,
     "I": 0.0212453353631513
    },
-   "raw_alt": {
-    "price_index_income_adj": 64.24316398271782,
-    "rev_to_gdp_ratio_new_innov": 0.31
-   },
    "gdp_pc_ppp_usd": 66745.8248561648,
    "rev_share_all_innov_pct": 2.35,
    "headline": {
-    "FRI": 89.097430739835,
+    "FRI": 59.87419215855235,
     "rank": 3
    },
    "mc": {
     "rank_median": 3.0,
-    "rank_p05": 1.0,
-    "rank_p95": 6.0
+    "rank_p05": 2.0,
+    "rank_p95": 8.0
    }
   },
   {
    "iso3": "CHE",
    "name": "Switzerland",
    "raw": {
-    "P": 55.74,
+    "P": 29.47,
     "R": 0.61,
     "A": 54.2,
     "D": 2.17,
     "I": 0.6589094649992122
    },
-   "raw_alt": {
-    "price_index_income_adj": 48.950484542583055,
-    "rev_to_gdp_ratio_new_innov": 0.29
-   },
    "gdp_pc_ppp_usd": 102513.347221899,
    "rev_share_all_innov_pct": 0.62,
    "headline": {
-    "FRI": 56.595860197068305,
+    "FRI": 27.420191852860142,
     "rank": 9
    },
    "mc": {
-    "rank_median": 9.0,
-    "rank_p05": 5.0,
+    "rank_median": 7.0,
+    "rank_p05": 4.0,
     "rank_p95": 9.0
    }
   },
@@ -312,41 +275,33 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
    "iso3": "AUS",
    "name": "Australia",
    "raw": {
-    "P": 36.3,
+    "P": 19.98,
     "R": 0.49,
     "A": 44.4,
     "D": 2.87,
     "I": 0.035
    },
-   "raw_alt": {
-    "price_index_income_adj": 45.42975805125147,
-    "rev_to_gdp_ratio_new_innov": 0.44
-   },
    "gdp_pc_ppp_usd": 71934.4033931263,
    "rev_share_all_innov_pct": 1.09,
    "headline": {
-    "FRI": 90.84027388165121,
+    "FRI": 74.7704633386253,
     "rank": 2
    },
    "mc": {
     "rank_median": 2.0,
-    "rank_p05": 1.0,
-    "rank_p95": 3.0
+    "rank_p05": 1.9500000000000455,
+    "rank_p95": 7.0
    }
   },
   {
    "iso3": "KOR",
    "name": "South Korea",
    "raw": {
-    "P": 33.64,
+    "P": 14.23,
     "R": 0.21,
     "A": 36.4,
     "D": 3.22,
     "I": 0.1055262165704629
-   },
-   "raw_alt": {
-    "price_index_income_adj": 47.97617545901053,
-    "rev_to_gdp_ratio_new_innov": 0.05
    },
    "gdp_pc_ppp_usd": 63124.9152183625,
    "rev_share_all_innov_pct": 0.83,
@@ -357,31 +312,31 @@ Data: RAND (2024) international price comparison, 2022 data; HHS-ASPE (2026) inn
    "mc": {
     "rank_median": 1.0,
     "rank_p05": 1.0,
-    "rank_p95": 3.0
+    "rank_p95": 2.0
    }
   }
  ],
  "pca": {
   "explained_variance_ratio": [
-   0.7648009426826892,
-   0.14812163418391422,
-   0.07427218045706929,
-   0.012126333092413302,
-   0.0006789095839141509
+   0.5256606372822595,
+   0.22432285418777798,
+   0.19297436528025894,
+   0.03615202742950731,
+   0.020890115820196373
   ],
   "loadings_PC1": {
-   "P": 0.9402228938125623,
-   "R": 0.924512268143588,
-   "A": 0.9087762531421372,
-   "D": 0.9446803179109665,
-   "I": 0.6057784315182759
+   "P": 0.7336515263029302,
+   "R": 0.7545967781551625,
+   "A": 0.8348063843088701,
+   "D": 0.830583110785387,
+   "I": 0.3658856700634044
   }
  }
 }</script>
 <script>
 const D = JSON.parse(document.getElementById('data').textContent);
 const keys = Object.keys(D.components);
-const short = {P:'Price level',R:'Revenue / GDP',A:'Availability',D:'Delay',I:'Pharma R&D'};
+const short = {P:'Brand price level',R:'Revenue / GDP',A:'Availability',D:'Interval to reimbursement',I:'Pharma R&D'};
 const w = {}; keys.forEach(k => w[k] = 1);
 const ctr = document.getElementById('controls');
 keys.forEach(k => {
@@ -392,12 +347,17 @@ keys.forEach(k => {
 });
 document.querySelectorAll('input[name=norm]').forEach(r => r.addEventListener('change', render));
 document.getElementById('exus').addEventListener('change', render);
+document.getElementById('contrib').addEventListener('change', render);
+document.getElementById('dl').addEventListener('click', () => {
+  const spec = {weights: w, normalisation: document.querySelector('input[name=norm]:checked').value, exclude_us: document.getElementById('exus').checked, generated: D.generated};
+  const a = document.createElement('a'); a.href = 'data:application/json,' + encodeURIComponent(JSON.stringify(spec, null, 1)); a.download = 'freerider_index_weights.json'; a.click();
+});
 document.getElementById('reset').addEventListener('click', () => { keys.forEach(k => { w[k]=1; document.getElementById('w'+k).value=1; document.getElementById('v'+k).textContent='1.0'; }); render(); });
 document.getElementById('gen').textContent = D.generated;
 
 function normalise(vals, dir, method){
   const x = vals.map(v => v*dir);
-  if(method==='rank'){ const s=[...x].sort((a,b)=>a-b); return x.map(v => (s.indexOf(v))/(x.length-1)*100); }
+  if(method==='rank'){ const s=[...x].sort((a,b)=>a-b); return x.map(v => { const lo=s.indexOf(v), hi=s.lastIndexOf(v); return ((lo+hi)/2)/(x.length-1)*100; }); }
   if(method==='zscore'){ const m=x.reduce((a,b)=>a+b,0)/x.length; const sd=Math.sqrt(x.reduce((a,b)=>a+(b-m)**2,0)/x.length); return x.map(v=>(v-m)/sd*20+50); }
   const mn=Math.min(...x), mx=Math.max(...x); return x.map(v => (v-mn)/(mx-mn)*100);
 }
@@ -407,13 +367,16 @@ function render(){
   const C = D.countries.filter(c => !(exus && c.iso3==='USA'));
   const S = {}; keys.forEach(k => { S[k] = normalise(C.map(c => c.raw[k]), D.components[k].direction, method); });
   const wsum = keys.reduce((a,k)=>a+w[k],0) || 1;
-  const rows = C.map((c,i) => ({c, fri: keys.reduce((a,k)=>a + w[k]*S[k][i], 0)/wsum}));
+  const contrib = document.getElementById('contrib').checked;
+  const rows = C.map((c,i) => { const v = keys.reduce((a,k)=>a + w[k]*S[k][i], 0)/wsum; return {c, fri: contrib ? 100 - v : v}; });
   rows.sort((a,b)=>b.fri-a.fri);
+  document.querySelector('#tbl thead th.barcell').textContent = contrib ? 'Contribution score (0–100)' : 'Index (0–100)';
   const tb = document.querySelector('#tbl tbody'); tb.innerHTML='';
   rows.forEach((r,i) => {
     const tr = document.createElement('tr');
     const mc = r.c.mc;
-    tr.innerHTML = `<td>${i+1}</td><td>${r.c.name}</td><td class="barcell"><div class="bar ${r.c.iso3==='USA'?'us':''}" style="width:${Math.max(1,r.fri)}%"></div></td><td class="n">${r.fri.toFixed(1)}</td><td class="n">${mc.rank_median.toFixed(0)} (${mc.rank_p05.toFixed(0)}–${mc.rank_p95.toFixed(0)})</td>`;
+    const mctxt = mc ? `${mc.rank_median.toFixed(0)} (${mc.rank_p05.toFixed(0)}–${mc.rank_p95.toFixed(0)})` : '—';
+    tr.innerHTML = `<td>${i+1}</td><td>${r.c.name}</td><td class="barcell"><div class="bar ${r.c.iso3==='USA'?'us':''}" style="width:${Math.max(1,r.fri)}%"></div></td><td class="n">${r.fri.toFixed(1)}</td><td class="n">${mctxt}</td>`;
     tb.appendChild(tr);
   });
 }

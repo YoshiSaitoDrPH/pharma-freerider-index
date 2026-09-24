@@ -3,7 +3,6 @@
 Small per-country requests are used because large multi-key SDMX queries time out.
 Outputs (data/raw/):
   oecd_berd_c21.csv   BERD, ISIC C21 (pharmaceuticals) and total (_T), USD PPP millions, current prices
-  oecd_msti.csv       MSTI: GERD and BERD as % of GDP
   oecd_rdtax.csv      Implied tax subsidy rates on R&D (1 - B-index), large/SME x profitable/loss
   wb_indicators.csv   GDP (current USD; PPP), GDP per capita (USD; PPP), population
 Run: python src/fetch_oecd_wb.py
@@ -62,8 +61,6 @@ sdmx_loop_multi("OECD.STI.STP,DSD_RDS_BERD@DF_BERD_INDU,1.0",
                 ["{c}.A.B.BES._T._T._Z.C21.MA.USD_PPP.V", "{c}.A.B.BES._T._T._Z._T.MA.USD_PPP.V"], 2015, "oecd_berd_c21.csv")
 # R&D tax subsidy: REF_AREA.FREQ.MEASURE.UNIT_MEASURE.SIZE.PROFIT_SCENARIO
 sdmx_loop("OECD.STI.STP,DSD_RDTAX@DF_RDSUB,1.0", "{c}.A.RDSUB.IX.LARGE+SME.PROFITABLE+LOSS", 2019, "oecd_rdtax.csv")
-# MSTI: REF_AREA.FREQ.MEASURE.UNIT_MEASURE.PRICE_BASE? -> use wildcard for trailing dims
-sdmx_loop("OECD.STI.STP,DSD_MSTI@DF_MSTI,1.0", "{c}.A.G_XGDP+B_XGDP..", 2015, "oecd_msti.csv")
 
 rows = []
 for ind in ["NY.GDP.MKTP.CD","NY.GDP.MKTP.PP.CD","NY.GDP.PCAP.CD","NY.GDP.PCAP.PP.CD","SP.POP.TOTL"]:

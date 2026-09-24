@@ -3,6 +3,7 @@ frech_contribution_usd_bn,FRECH2026,2018
 kolchinsky_freeriding_index_pct,KOLCHINSKY2025,2022 prices
 pharma_rd_pct_gdp_assoc,EFPIA_FIGURES2026,2024
 price_index_all_us100,RAND2024,2022
+price_index_all_usnet_us100,RAND2024,2022
 price_index_brand_us100,RAND2024,2022
 rand_sales_2022_usd_bn,RAND2024,2022
 reimb_delay_years,PHILIPSON2026,2014-2019 cohort
@@ -28,3 +29,5 @@ pharma_berd_pct_gdp (AUS override),ABS_BERD2023_24,2024
 pharma_berd_usd_ppp_m (AUS override),ABS_BERD2023_24,2023-24
 pharma_berd_year (AUS override),ABS_BERD2023_24,2023-24
 rd_tax_subsidy_*,OECD_RDTAX,2025
+industry_trials_per_million,CTGOV,2023-2025 starts
+gbard_health_pct_gdp,OECD_GBARD + WB_WDI,2023 (or latest)

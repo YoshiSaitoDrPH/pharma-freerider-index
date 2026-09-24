@@ -1,73 +1,66 @@
 iso3,country,variable,value,unit,year,source_id,source_note
 USA,United States,price_index_all_us100,100.0,percent of US price,2022,RAND2024,"Reference (US=100). Mulcahy AW, Schwam D, Lovejoy SL. RAND RR-A788-3 (2024), Table B.2 Scenario 4 main results; value = 100 / (US index / 100)"
-JPN,Japan,price_index_all_us100,51.03,percent of US price,2022,RAND2024,"Table B.2 Scenario 4: US = 195.97% of Japan -> 100/1.9597"
-DEU,Germany,price_index_all_us100,44.86,percent of US price,2022,RAND2024,"US = 222.91% of Germany"
-FRA,France,price_index_all_us100,40.34,percent of US price,2022,RAND2024,"US = 247.91% of France"
-GBR,United Kingdom,price_index_all_us100,38.21,percent of US price,2022,RAND2024,"US = 261.72% of UK"
-ITA,Italy,price_index_all_us100,39.97,percent of US price,2022,RAND2024,"US = 250.16% of Italy"
-CAN,Canada,price_index_all_us100,47.63,percent of US price,2022,RAND2024,"US = 209.95% of Canada"
-CHE,Switzerland,price_index_all_us100,55.74,percent of US price,2022,RAND2024,"US = 179.39% of Switzerland"
-AUS,Australia,price_index_all_us100,36.30,percent of US price,2022,RAND2024,"US = 275.47% of Australia"
-KOR,South Korea,price_index_all_us100,33.64,percent of US price,2022,RAND2024,"US = 297.25% of Korea"
-USA,United States,price_index_brand_us100,100.0,percent of US price,2022,RAND2024,"Brand-name originator drugs, Figure 3.2 (G7 only)"
-JPN,Japan,price_index_brand_us100,21.55,percent of US price,2022,RAND2024,"Figure 3.2: US = 464% of Japan"
-DEU,Germany,price_index_brand_us100,25.84,percent of US price,2022,RAND2024,"Figure 3.2: US = 387% of Germany"
-FRA,France,price_index_brand_us100,22.47,percent of US price,2022,RAND2024,"Figure 3.2: US = 445% of France"
-GBR,United Kingdom,price_index_brand_us100,25.97,percent of US price,2022,RAND2024,"Figure 3.2: US = 385% of UK"
-ITA,Italy,price_index_brand_us100,28.17,percent of US price,2022,RAND2024,"Figure 3.2: US = 355% of Italy"
-CAN,Canada,price_index_brand_us100,30.86,percent of US price,2022,RAND2024,"Figure 3.2: US = 324% of Canada"
+JPN,Japan,price_index_all_us100,51.03,percent of US price,2022,RAND2024,Table B.2 Scenario 4: US = 195.97% of Japan -> 100/1.9597
+DEU,Germany,price_index_all_us100,44.86,percent of US price,2022,RAND2024,US = 222.91% of Germany
+FRA,France,price_index_all_us100,40.34,percent of US price,2022,RAND2024,US = 247.91% of France
+GBR,United Kingdom,price_index_all_us100,38.21,percent of US price,2022,RAND2024,US = 261.72% of UK
+ITA,Italy,price_index_all_us100,39.97,percent of US price,2022,RAND2024,US = 250.16% of Italy
+CAN,Canada,price_index_all_us100,47.63,percent of US price,2022,RAND2024,US = 209.95% of Canada
+CHE,Switzerland,price_index_all_us100,55.74,percent of US price,2022,RAND2024,US = 179.39% of Switzerland
+AUS,Australia,price_index_all_us100,36.3,percent of US price,2022,RAND2024,US = 275.47% of Australia
+KOR,South Korea,price_index_all_us100,33.64,percent of US price,2022,RAND2024,US = 297.25% of Korea
 USA,United States,rev_share_all_innov_pct,66.98,percent of OECD innovative-drug revenue,2020-2025,ASPE2026,"Murphy S. ASPE Issue Brief June 2026, Table 1 col 2 (All Innovative Drugs)"
-JPN,Japan,rev_share_all_innov_pct,5.83,percent,2020-2025,ASPE2026,"Table 1 col 2"
-DEU,Germany,rev_share_all_innov_pct,4.32,percent,2020-2025,ASPE2026,"Table 1 col 2"
-FRA,France,rev_share_all_innov_pct,3.43,percent,2020-2025,ASPE2026,"Table 1 col 2"
-GBR,United Kingdom,rev_share_all_innov_pct,2.78,percent,2020-2025,ASPE2026,"Table 1 col 2"
-ITA,Italy,rev_share_all_innov_pct,3.25,percent,2020-2025,ASPE2026,"Table 1 col 2"
-CAN,Canada,rev_share_all_innov_pct,2.35,percent,2020-2025,ASPE2026,"Table 1 col 2"
-CHE,Switzerland,rev_share_all_innov_pct,0.62,percent,2020-2025,ASPE2026,"Table 1 col 2"
-AUS,Australia,rev_share_all_innov_pct,1.09,percent,2020-2025,ASPE2026,"Table 1 col 2"
-KOR,South Korea,rev_share_all_innov_pct,0.83,percent,2020-2025,ASPE2026,"Table 1 col 2"
-USA,United States,rev_share_new_innov_pct,79.87,percent,2020-2025,ASPE2026,"Table 1 col 1 (New Innovative Drugs launched after Q1 2020)"
-JPN,Japan,rev_share_new_innov_pct,5.46,percent,2020-2025,ASPE2026,"Table 1 col 1"
-DEU,Germany,rev_share_new_innov_pct,3.35,percent,2020-2025,ASPE2026,"Table 1 col 1"
-FRA,France,rev_share_new_innov_pct,1.85,percent,2020-2025,ASPE2026,"Table 1 col 1"
-GBR,United Kingdom,rev_share_new_innov_pct,1.95,percent,2020-2025,ASPE2026,"Table 1 col 1"
-ITA,Italy,rev_share_new_innov_pct,1.45,percent,2020-2025,ASPE2026,"Table 1 col 1"
-CAN,Canada,rev_share_new_innov_pct,0.98,percent,2020-2025,ASPE2026,"Table 1 col 1"
-CHE,Switzerland,rev_share_new_innov_pct,0.29,percent,2020-2025,ASPE2026,"Table 1 col 1"
-AUS,Australia,rev_share_new_innov_pct,0.98,percent,2020-2025,ASPE2026,"Table 1 col 1"
-KOR,South Korea,rev_share_new_innov_pct,0.21,percent,2020-2025,ASPE2026,"Table 1 col 1"
-USA,United States,rev_to_gdp_ratio_all_innov,1.94,ratio of revenue share to GDP share,2020-2025,ASPE2026,"Table 3 col 2"
-JPN,Japan,rev_to_gdp_ratio_all_innov,0.73,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-DEU,Germany,rev_to_gdp_ratio_all_innov,0.58,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-FRA,France,rev_to_gdp_ratio_all_innov,0.67,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-GBR,United Kingdom,rev_to_gdp_ratio_all_innov,0.56,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-ITA,Italy,rev_to_gdp_ratio_all_innov,0.76,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-CAN,Canada,rev_to_gdp_ratio_all_innov,0.74,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-CHE,Switzerland,rev_to_gdp_ratio_all_innov,0.61,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-AUS,Australia,rev_to_gdp_ratio_all_innov,0.49,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-KOR,South Korea,rev_to_gdp_ratio_all_innov,0.21,ratio,2020-2025,ASPE2026,"Table 3 col 2"
-USA,United States,rev_to_gdp_ratio_new_innov,2.32,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-JPN,Japan,rev_to_gdp_ratio_new_innov,0.68,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-DEU,Germany,rev_to_gdp_ratio_new_innov,0.45,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-FRA,France,rev_to_gdp_ratio_new_innov,0.36,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-GBR,United Kingdom,rev_to_gdp_ratio_new_innov,0.39,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-ITA,Italy,rev_to_gdp_ratio_new_innov,0.34,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-CAN,Canada,rev_to_gdp_ratio_new_innov,0.31,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-CHE,Switzerland,rev_to_gdp_ratio_new_innov,0.29,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-AUS,Australia,rev_to_gdp_ratio_new_innov,0.44,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-KOR,South Korea,rev_to_gdp_ratio_new_innov,0.05,ratio,2020-2025,ASPE2026,"Table 3 col 1"
-USA,United States,rev_to_pop_ratio_all_innov,2.72,ratio of revenue share to population share,2020-2025,ASPE2026,"Table 2 col 2"
-JPN,Japan,rev_to_pop_ratio_all_innov,0.63,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-DEU,Germany,rev_to_pop_ratio_all_innov,0.71,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-FRA,France,rev_to_pop_ratio_all_innov,0.68,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-GBR,United Kingdom,rev_to_pop_ratio_all_innov,0.56,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-ITA,Italy,rev_to_pop_ratio_all_innov,0.75,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-CAN,Canada,rev_to_pop_ratio_all_innov,0.81,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-CHE,Switzerland,rev_to_pop_ratio_all_innov,0.95,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-AUS,Australia,rev_to_pop_ratio_all_innov,0.57,ratio,2020-2025,ASPE2026,"Table 2 col 2"
-KOR,South Korea,rev_to_pop_ratio_all_innov,0.22,ratio,2020-2025,ASPE2026,"Table 2 col 2"
+JPN,Japan,rev_share_all_innov_pct,5.83,percent,2020-2025,ASPE2026,Table 1 col 2
+DEU,Germany,rev_share_all_innov_pct,4.32,percent,2020-2025,ASPE2026,Table 1 col 2
+FRA,France,rev_share_all_innov_pct,3.43,percent,2020-2025,ASPE2026,Table 1 col 2
+GBR,United Kingdom,rev_share_all_innov_pct,2.78,percent,2020-2025,ASPE2026,Table 1 col 2
+ITA,Italy,rev_share_all_innov_pct,3.25,percent,2020-2025,ASPE2026,Table 1 col 2
+CAN,Canada,rev_share_all_innov_pct,2.35,percent,2020-2025,ASPE2026,Table 1 col 2
+CHE,Switzerland,rev_share_all_innov_pct,0.62,percent,2020-2025,ASPE2026,Table 1 col 2
+AUS,Australia,rev_share_all_innov_pct,1.09,percent,2020-2025,ASPE2026,Table 1 col 2
+KOR,South Korea,rev_share_all_innov_pct,0.83,percent,2020-2025,ASPE2026,Table 1 col 2
+USA,United States,rev_share_new_innov_pct,79.87,percent,2020-2025,ASPE2026,Table 1 col 1 (New Innovative Drugs launched after Q1 2020)
+JPN,Japan,rev_share_new_innov_pct,5.46,percent,2020-2025,ASPE2026,Table 1 col 1
+DEU,Germany,rev_share_new_innov_pct,3.35,percent,2020-2025,ASPE2026,Table 1 col 1
+FRA,France,rev_share_new_innov_pct,1.85,percent,2020-2025,ASPE2026,Table 1 col 1
+GBR,United Kingdom,rev_share_new_innov_pct,1.95,percent,2020-2025,ASPE2026,Table 1 col 1
+ITA,Italy,rev_share_new_innov_pct,1.45,percent,2020-2025,ASPE2026,Table 1 col 1
+CAN,Canada,rev_share_new_innov_pct,0.98,percent,2020-2025,ASPE2026,Table 1 col 1
+CHE,Switzerland,rev_share_new_innov_pct,0.29,percent,2020-2025,ASPE2026,Table 1 col 1
+AUS,Australia,rev_share_new_innov_pct,0.98,percent,2020-2025,ASPE2026,Table 1 col 1
+KOR,South Korea,rev_share_new_innov_pct,0.21,percent,2020-2025,ASPE2026,Table 1 col 1
+USA,United States,rev_to_gdp_ratio_all_innov,1.94,ratio of revenue share to GDP share,2020-2025,ASPE2026,Table 3 col 2
+JPN,Japan,rev_to_gdp_ratio_all_innov,0.73,ratio,2020-2025,ASPE2026,Table 3 col 2
+DEU,Germany,rev_to_gdp_ratio_all_innov,0.58,ratio,2020-2025,ASPE2026,Table 3 col 2
+FRA,France,rev_to_gdp_ratio_all_innov,0.67,ratio,2020-2025,ASPE2026,Table 3 col 2
+GBR,United Kingdom,rev_to_gdp_ratio_all_innov,0.56,ratio,2020-2025,ASPE2026,Table 3 col 2
+ITA,Italy,rev_to_gdp_ratio_all_innov,0.76,ratio,2020-2025,ASPE2026,Table 3 col 2
+CAN,Canada,rev_to_gdp_ratio_all_innov,0.74,ratio,2020-2025,ASPE2026,Table 3 col 2
+CHE,Switzerland,rev_to_gdp_ratio_all_innov,0.61,ratio,2020-2025,ASPE2026,Table 3 col 2
+AUS,Australia,rev_to_gdp_ratio_all_innov,0.49,ratio,2020-2025,ASPE2026,Table 3 col 2
+KOR,South Korea,rev_to_gdp_ratio_all_innov,0.21,ratio,2020-2025,ASPE2026,Table 3 col 2
+USA,United States,rev_to_gdp_ratio_new_innov,2.32,ratio,2020-2025,ASPE2026,Table 3 col 1
+JPN,Japan,rev_to_gdp_ratio_new_innov,0.68,ratio,2020-2025,ASPE2026,Table 3 col 1
+DEU,Germany,rev_to_gdp_ratio_new_innov,0.45,ratio,2020-2025,ASPE2026,Table 3 col 1
+FRA,France,rev_to_gdp_ratio_new_innov,0.36,ratio,2020-2025,ASPE2026,Table 3 col 1
+GBR,United Kingdom,rev_to_gdp_ratio_new_innov,0.39,ratio,2020-2025,ASPE2026,Table 3 col 1
+ITA,Italy,rev_to_gdp_ratio_new_innov,0.34,ratio,2020-2025,ASPE2026,Table 3 col 1
+CAN,Canada,rev_to_gdp_ratio_new_innov,0.31,ratio,2020-2025,ASPE2026,Table 3 col 1
+CHE,Switzerland,rev_to_gdp_ratio_new_innov,0.29,ratio,2020-2025,ASPE2026,Table 3 col 1
+AUS,Australia,rev_to_gdp_ratio_new_innov,0.44,ratio,2020-2025,ASPE2026,Table 3 col 1
+KOR,South Korea,rev_to_gdp_ratio_new_innov,0.05,ratio,2020-2025,ASPE2026,Table 3 col 1
+USA,United States,rev_to_pop_ratio_all_innov,2.72,ratio of revenue share to population share,2020-2025,ASPE2026,Table 2 col 2
+JPN,Japan,rev_to_pop_ratio_all_innov,0.63,ratio,2020-2025,ASPE2026,Table 2 col 2
+DEU,Germany,rev_to_pop_ratio_all_innov,0.71,ratio,2020-2025,ASPE2026,Table 2 col 2
+FRA,France,rev_to_pop_ratio_all_innov,0.68,ratio,2020-2025,ASPE2026,Table 2 col 2
+GBR,United Kingdom,rev_to_pop_ratio_all_innov,0.56,ratio,2020-2025,ASPE2026,Table 2 col 2
+ITA,Italy,rev_to_pop_ratio_all_innov,0.75,ratio,2020-2025,ASPE2026,Table 2 col 2
+CAN,Canada,rev_to_pop_ratio_all_innov,0.81,ratio,2020-2025,ASPE2026,Table 2 col 2
+CHE,Switzerland,rev_to_pop_ratio_all_innov,0.95,ratio,2020-2025,ASPE2026,Table 2 col 2
+AUS,Australia,rev_to_pop_ratio_all_innov,0.57,ratio,2020-2025,ASPE2026,Table 2 col 2
+KOR,South Korea,rev_to_pop_ratio_all_innov,0.22,ratio,2020-2025,ASPE2026,Table 2 col 2
 USA,United States,reimb_delay_years,0.0,mean years after US launch to public reimbursement,2014-2019 cohort,PHILIPSON2026,"US is the launch reference (first launch by construction). Philipson TJ et al. UChicago ECCHC Policy Brief, 9 Aug 2026, Table 1 'Average Late Time (Years)'"
-JPN,Japan,reimb_delay_years,2.00,years,2014-2019 cohort,PHILIPSON2026,"Table 1: Japan, n=127 overlapping drugs"
+JPN,Japan,reimb_delay_years,2.0,years,2014-2019 cohort,PHILIPSON2026,"Table 1: Japan, n=127 overlapping drugs"
 DEU,Germany,reimb_delay_years,1.11,years,2014-2019 cohort,PHILIPSON2026,"Table 1: Germany, n=164"
 FRA,France,reimb_delay_years,2.28,years,2014-2019 cohort,PHILIPSON2026,"Table 1: France, n=140"
 GBR,United Kingdom,reimb_delay_years,2.34,years,2014-2019 cohort,PHILIPSON2026,"Table 1: UK, n=144"
@@ -76,55 +69,55 @@ CAN,Canada,reimb_delay_years,3.13,years,2014-2019 cohort,PHILIPSON2026,"Table 1:
 CHE,Switzerland,reimb_delay_years,2.17,years,2014-2019 cohort,PHILIPSON2026,"Table 1: Switzerland, n=122"
 AUS,Australia,reimb_delay_years,2.87,years,2014-2019 cohort,PHILIPSON2026,"Table 1: Australia, n=100"
 KOR,South Korea,reimb_delay_years,3.22,years,2014-2019 cohort,PHILIPSON2026,"Table 1: Korea, n=82"
-USA,United States,reimb_share_2023_pct,100.0,percent of 225 US-first novel drugs reimbursed by 2023,2014-2019 cohort,PHILIPSON2026,"US is the launch reference (all 225 launched in US by construction); treated as 100"
-JPN,Japan,reimb_share_2023_pct,56.4,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-DEU,Germany,reimb_share_2023_pct,72.9,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-FRA,France,reimb_share_2023_pct,62.2,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-GBR,United Kingdom,reimb_share_2023_pct,64.0,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-ITA,Italy,reimb_share_2023_pct,68.0,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-CAN,Canada,reimb_share_2023_pct,36.4,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-CHE,Switzerland,reimb_share_2023_pct,54.2,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-AUS,Australia,reimb_share_2023_pct,44.4,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-KOR,South Korea,reimb_share_2023_pct,36.4,percent,2014-2019 cohort,PHILIPSON2026,"Section 2 text"
-DEU,Germany,wait_mean_days,158,mean days from EU central approval to availability,2021-2024 cohort,EFPIA_WAIT2025,"EFPIA Patients W.A.I.T. Indicator 2025 Survey (IQVIA, May 2026), slide 16; 156/168 available"
-CHE,Switzerland,wait_mean_days,445,days,2021-2024 cohort,EFPIA_WAIT2025,"slide 16 (local authorisation date used); 128/168 available"
-GBR,United Kingdom,wait_mean_days,388,days,2021-2024 cohort,EFPIA_WAIT2025,"England, slide 16 (local authorisation date used); 102/168 available"
-ITA,Italy,wait_mean_days,441,days,2021-2024 cohort,EFPIA_WAIT2025,"slide 16; 131/168 available"
-FRA,France,wait_mean_days,633,days,2021-2024 cohort,EFPIA_WAIT2025,"slide 16; 96/168 available"
-DEU,Germany,wait_median_days,56,median days,2021-2024 cohort,EFPIA_WAIT2025,"slide 18"
-CHE,Switzerland,wait_median_days,212,median days,2021-2024 cohort,EFPIA_WAIT2025,"slide 18"
-GBR,United Kingdom,wait_median_days,282,median days,2021-2024 cohort,EFPIA_WAIT2025,"England, slide 18"
-ITA,Italy,wait_median_days,393,median days,2021-2024 cohort,EFPIA_WAIT2025,"slide 18"
-FRA,France,wait_median_days,520,median days,2021-2024 cohort,EFPIA_WAIT2025,"slide 18"
-DEU,Germany,wait_availability_pct,92.9,percent of 168 EMA-approved medicines available,2021-2024 cohort,EFPIA_WAIT2025,"156/168"
-CHE,Switzerland,wait_availability_pct,76.2,percent,2021-2024 cohort,EFPIA_WAIT2025,"128/168"
-GBR,United Kingdom,wait_availability_pct,60.7,percent,2021-2024 cohort,EFPIA_WAIT2025,"England 102/168"
-ITA,Italy,wait_availability_pct,78.0,percent,2021-2024 cohort,EFPIA_WAIT2025,"131/168"
-FRA,France,wait_availability_pct,57.1,percent,2021-2024 cohort,EFPIA_WAIT2025,"96/168"
+USA,United States,reimb_share_2023_pct,100.0,percent of 225 US-first novel drugs reimbursed by 2023,2014-2019 cohort,PHILIPSON2026,US is the launch reference (all 225 launched in US by construction); treated as 100
+JPN,Japan,reimb_share_2023_pct,56.4,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+DEU,Germany,reimb_share_2023_pct,72.9,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+FRA,France,reimb_share_2023_pct,62.2,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+GBR,United Kingdom,reimb_share_2023_pct,64.0,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+ITA,Italy,reimb_share_2023_pct,68.0,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+CAN,Canada,reimb_share_2023_pct,36.4,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+CHE,Switzerland,reimb_share_2023_pct,54.2,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+AUS,Australia,reimb_share_2023_pct,44.4,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+KOR,South Korea,reimb_share_2023_pct,36.4,percent,2014-2019 cohort,PHILIPSON2026,Section 2 text
+DEU,Germany,wait_mean_days,158.0,mean days from EU central approval to availability,2021-2024 cohort,EFPIA_WAIT2025,"EFPIA Patients W.A.I.T. Indicator 2025 Survey (IQVIA, May 2026), slide 16; 156/168 available"
+CHE,Switzerland,wait_mean_days,445.0,days,2021-2024 cohort,EFPIA_WAIT2025,slide 16 (local authorisation date used); 128/168 available
+GBR,United Kingdom,wait_mean_days,388.0,days,2021-2024 cohort,EFPIA_WAIT2025,"England, slide 16 (local authorisation date used); 102/168 available"
+ITA,Italy,wait_mean_days,441.0,days,2021-2024 cohort,EFPIA_WAIT2025,slide 16; 131/168 available
+FRA,France,wait_mean_days,633.0,days,2021-2024 cohort,EFPIA_WAIT2025,slide 16; 96/168 available
+DEU,Germany,wait_median_days,56.0,median days,2021-2024 cohort,EFPIA_WAIT2025,slide 18
+CHE,Switzerland,wait_median_days,212.0,median days,2021-2024 cohort,EFPIA_WAIT2025,slide 18
+GBR,United Kingdom,wait_median_days,282.0,median days,2021-2024 cohort,EFPIA_WAIT2025,"England, slide 18"
+ITA,Italy,wait_median_days,393.0,median days,2021-2024 cohort,EFPIA_WAIT2025,slide 18
+FRA,France,wait_median_days,520.0,median days,2021-2024 cohort,EFPIA_WAIT2025,slide 18
+DEU,Germany,wait_availability_pct,92.9,percent of 168 EMA-approved medicines available,2021-2024 cohort,EFPIA_WAIT2025,156/168
+CHE,Switzerland,wait_availability_pct,76.2,percent,2021-2024 cohort,EFPIA_WAIT2025,128/168
+GBR,United Kingdom,wait_availability_pct,60.7,percent,2021-2024 cohort,EFPIA_WAIT2025,England 102/168
+ITA,Italy,wait_availability_pct,78.0,percent,2021-2024 cohort,EFPIA_WAIT2025,131/168
+FRA,France,wait_availability_pct,57.1,percent,2021-2024 cohort,EFPIA_WAIT2025,96/168
 CAN,Canada,kolchinsky_freeriding_index_pct,50.4,percent,2022 prices,KOLCHINSKY2025,"Kolchinsky P, Xie RZ. No More Freeriding. RApport (RA Capital), 24 May 2025. 1 - adjusted net price ratio / GDP-per-capita-PPP ratio"
-ITA,Italy,kolchinsky_freeriding_index_pct,52.6,percent,2022 prices,KOLCHINSKY2025,"as above"
-GBR,United Kingdom,kolchinsky_freeriding_index_pct,57.2,percent,2022 prices,KOLCHINSKY2025,"as above"
-JPN,Japan,kolchinsky_freeriding_index_pct,58.1,percent,2022 prices,KOLCHINSKY2025,"as above"
-DEU,Germany,kolchinsky_freeriding_index_pct,63.5,percent,2022 prices,KOLCHINSKY2025,"as above"
-FRA,France,kolchinsky_freeriding_index_pct,63.6,percent,2022 prices,KOLCHINSKY2025,"as above"
-AUS,Australia,kolchinsky_freeriding_index_pct,69.9,percent,2022 prices,KOLCHINSKY2025,"as above"
+ITA,Italy,kolchinsky_freeriding_index_pct,52.6,percent,2022 prices,KOLCHINSKY2025,as above
+GBR,United Kingdom,kolchinsky_freeriding_index_pct,57.2,percent,2022 prices,KOLCHINSKY2025,as above
+JPN,Japan,kolchinsky_freeriding_index_pct,58.1,percent,2022 prices,KOLCHINSKY2025,as above
+DEU,Germany,kolchinsky_freeriding_index_pct,63.5,percent,2022 prices,KOLCHINSKY2025,as above
+FRA,France,kolchinsky_freeriding_index_pct,63.6,percent,2022 prices,KOLCHINSKY2025,as above
+AUS,Australia,kolchinsky_freeriding_index_pct,69.9,percent,2022 prices,KOLCHINSKY2025,as above
 USA,United States,frech_contribution_usd_bn,326.4,USD billion (price minus marginal cost times sales),2018,FRECH2026,"Frech HE, Pauly MV, Comanor WS, Martinez JR. Health Econ 2026;35(8):1158-1174, doi:10.1002/hec.70105"
-JPN,Japan,frech_contribution_usd_bn,40.4,USD billion,2018,FRECH2026,"as above"
-DEU,Germany,frech_contribution_usd_bn,22.0,USD billion,2018,FRECH2026,"as above"
-ITA,Italy,frech_contribution_usd_bn,16.8,USD billion,2018,FRECH2026,"as above"
-FRA,France,frech_contribution_usd_bn,14.6,USD billion,2018,FRECH2026,"as above"
-GBR,United Kingdom,frech_contribution_usd_bn,11.2,USD billion,2018,FRECH2026,"as above"
-CAN,Canada,frech_contribution_usd_bn,10.6,USD billion,2018,FRECH2026,"as above"
-USA,United States,rand_sales_2022_usd_bn,617.2,USD billion (IQVIA MIDAS 2022 sales),2022,RAND2024,"Table 2.1"
-JPN,Japan,rand_sales_2022_usd_bn,64.9,USD billion,2022,RAND2024,"Table 2.1"
-DEU,Germany,rand_sales_2022_usd_bn,46.5,USD billion,2022,RAND2024,"Table 2.1"
-FRA,France,rand_sales_2022_usd_bn,37.5,USD billion,2022,RAND2024,"Table 2.1"
-ITA,Italy,rand_sales_2022_usd_bn,33.0,USD billion,2022,RAND2024,"Table 2.1"
-GBR,United Kingdom,rand_sales_2022_usd_bn,31.6,USD billion,2022,RAND2024,"Table 2.1"
-CAN,Canada,rand_sales_2022_usd_bn,26.6,USD billion,2022,RAND2024,"Table 2.1"
-KOR,South Korea,rand_sales_2022_usd_bn,15.3,USD billion,2022,RAND2024,"Table 2.1"
-AUS,Australia,rand_sales_2022_usd_bn,10.9,USD billion,2022,RAND2024,"Table 2.1"
-CHE,Switzerland,rand_sales_2022_usd_bn,6.5,USD billion,2022,RAND2024,"Table 2.1"
+JPN,Japan,frech_contribution_usd_bn,40.4,USD billion,2018,FRECH2026,as above
+DEU,Germany,frech_contribution_usd_bn,22.0,USD billion,2018,FRECH2026,as above
+ITA,Italy,frech_contribution_usd_bn,16.8,USD billion,2018,FRECH2026,as above
+FRA,France,frech_contribution_usd_bn,14.6,USD billion,2018,FRECH2026,as above
+GBR,United Kingdom,frech_contribution_usd_bn,11.2,USD billion,2018,FRECH2026,as above
+CAN,Canada,frech_contribution_usd_bn,10.6,USD billion,2018,FRECH2026,as above
+USA,United States,rand_sales_2022_usd_bn,617.2,USD billion (IQVIA MIDAS 2022 sales),2022,RAND2024,Table 2.1
+JPN,Japan,rand_sales_2022_usd_bn,64.9,USD billion,2022,RAND2024,Table 2.1
+DEU,Germany,rand_sales_2022_usd_bn,46.5,USD billion,2022,RAND2024,Table 2.1
+FRA,France,rand_sales_2022_usd_bn,37.5,USD billion,2022,RAND2024,Table 2.1
+ITA,Italy,rand_sales_2022_usd_bn,33.0,USD billion,2022,RAND2024,Table 2.1
+GBR,United Kingdom,rand_sales_2022_usd_bn,31.6,USD billion,2022,RAND2024,Table 2.1
+CAN,Canada,rand_sales_2022_usd_bn,26.6,USD billion,2022,RAND2024,Table 2.1
+KOR,South Korea,rand_sales_2022_usd_bn,15.3,USD billion,2022,RAND2024,Table 2.1
+AUS,Australia,rand_sales_2022_usd_bn,10.9,USD billion,2022,RAND2024,Table 2.1
+CHE,Switzerland,rand_sales_2022_usd_bn,6.5,USD billion,2022,RAND2024,Table 2.1
 USA,United States,pharma_rd_pct_gdp_assoc,0.391,percent of GDP,2024,EFPIA_FIGURES2026,"PhRMA member R&D USD 114,557 million (2024) as compiled in EFPIA Key Data 2026 / GDP 2024 USD 29,298,013 million. Industry-association basis (sensitivity S11)."
 JPN,Japan,pharma_rd_pct_gdp_assoc,0.262,percent of GDP,2024,MIC_KAGAKU2025,"JPY 1,660.7 billion FY2024 (MIC survey, reproduced in JPMA DATA BOOK 2026) / GDP 2024 JPY 634,226 billion"
 DEU,Germany,pharma_rd_pct_gdp_assoc,0.248,percent of GDP,2024,EFPIA_FIGURES2026,"EUR 10,728 million (2024) / GDP 2024 EUR 4,328,970 million"
@@ -133,5 +126,25 @@ GBR,United Kingdom,pharma_rd_pct_gdp_assoc,0.322,percent of GDP,2024,ONS_BERD202
 ITA,Italy,pharma_rd_pct_gdp_assoc,0.104,percent of GDP,2024,EFPIA_FIGURES2026,"EUR 2,300 million (2024) / GDP 2024 EUR 2,202,031 million"
 CAN,Canada,pharma_rd_pct_gdp_assoc,0.042,percent of GDP,2024,PMPRB2024,"Patented Medicine Prices Review Board Annual Report 2024: rights holders' R&D expenditure CAD 1.29 billion (R&D-to-sales 4.1%) / GDP 2024 CAD 3,108,600 million"
 CHE,Switzerland,pharma_rd_pct_gdp_assoc,1.055,percent of GDP,2024,EFPIA_FIGURES2026,"EUR 9,553 million (2024) converted at 0.9426 CHF/EUR average 2024 = CHF 9,005 million / GDP 2024 CHF 854,000 million"
-AUS,Australia,pharma_rd_pct_gdp_assoc,0.035,percent of GDP,2024,ABS_BERD2023_24,"No association series; ABS chemical-and-pharmaceutical manufacturing line used (same as headline)"
-KOR,South Korea,pharma_rd_pct_gdp_assoc,0.106,percent of GDP,2023,OECD_BERD,"No association series retrieved; OECD ISIC C21 value used (same as headline)"
+AUS,Australia,pharma_rd_pct_gdp_assoc,0.035,percent of GDP,2024,ABS_BERD2023_24,No association series; ABS chemical-and-pharmaceutical manufacturing line used (same as headline)
+KOR,South Korea,pharma_rd_pct_gdp_assoc,0.106,percent of GDP,2023,OECD_BERD,No association series retrieved; OECD ISIC C21 value used (same as headline)
+USA,United States,price_index_brand_us100,100.0,percent of US price,2022,RAND2024,"Reference (US=100). Table B.1 column ""Brand-Name Originator Drugs"""
+AUS,Australia,price_index_brand_us100,19.98,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 500.45% of Australia -> 100/5.0045
+CAN,Canada,price_index_brand_us100,30.86,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 324.0% of Canada -> 100/3.2400
+FRA,France,price_index_brand_us100,22.47,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 445.02% of France -> 100/4.4502
+DEU,Germany,price_index_brand_us100,25.84,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 387.0% of Germany -> 100/3.8700
+ITA,Italy,price_index_brand_us100,28.15,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 355.29% of Italy -> 100/3.5529
+JPN,Japan,price_index_brand_us100,21.54,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 464.34% of Japan -> 100/4.6434
+KOR,South Korea,price_index_brand_us100,14.23,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 702.71% of South Korea -> 100/7.0271
+CHE,Switzerland,price_index_brand_us100,29.47,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 339.33% of Switzerland -> 100/3.3933
+GBR,United Kingdom,price_index_brand_us100,25.99,percent of US price,2022,RAND2024,Table B.1 Brand-Name Originator Drugs: US = 384.8% of United Kingdom -> 100/3.8480
+USA,United States,price_index_all_usnet_us100,100.0,percent of US net price,2022,RAND2024,"Reference. Table B.1 column ""U.S. Net Price Adjustment"" (US manufacturer prices reduced 37.7%)"
+AUS,Australia,price_index_all_usnet_us100,43.4,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 230.44% of Australia
+CAN,Canada,price_index_all_usnet_us100,70.12,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 142.62% of Canada
+FRA,France,price_index_all_usnet_us100,49.18,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 203.35% of France
+DEU,Germany,price_index_all_usnet_us100,54.56,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 183.27% of Germany
+ITA,Italy,price_index_all_usnet_us100,59.89,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 166.98% of Italy
+JPN,Japan,price_index_all_usnet_us100,46.25,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 216.22% of Japan
+KOR,South Korea,price_index_all_usnet_us100,41.02,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 243.77% of South Korea
+CHE,Switzerland,price_index_all_usnet_us100,73.34,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 136.36% of Switzerland
+GBR,United Kingdom,price_index_all_usnet_us100,59.44,percent of US net price,2022,RAND2024,Table B.1 U.S. Net Price Adjustment: US = 168.23% of United Kingdom

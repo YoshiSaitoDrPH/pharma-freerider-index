@@ -1,4 +1,4 @@
-iso3,country,rank_median,rank_p05,rank_p95,rank_mode,p_top3,p_bottom3,score_mean,score_p05,score_p95
+iso3,country,rank_median,rank_p05,rank_p95,rank_mode,p_top3,p_bottom3_nonUS,score_mean,score_p05,score_p95
 JPN,Japan,7.0,5.0,9.0,7,0.0008,0.7437,30.90753254195417,12.213908858017334,45.02166454782445
 DEU,Germany,8.0,5.0,9.0,9,0.005,0.8333,26.218832869311225,3.9762973308231673,46.81937931722155
 FRA,France,4.0,3.0,6.0,4,0.1166,0.04,47.995137645220666,31.864069000021246,63.56931755402292

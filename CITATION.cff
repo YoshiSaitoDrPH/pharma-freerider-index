@@ -8,4 +8,6 @@ authors:
 version: 0.1.0
 date-released: 2026-09-24
 license: MIT
+license-url: https://github.com/YoshiSaitoDrPH/pharma-freerider-index/blob/main/LICENSE
+notes: "Code MIT; data compilation and documentation CC BY 4.0 (see LICENSE-DATA)."
 repository-code: https://github.com/YoshiSaitoDrPH/pharma-freerider-index
