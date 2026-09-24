@@ -61,9 +61,9 @@ for i in range(R.shape[0]):
         v = R.values[i, j]
         ax.text(j, i, "" if np.isnan(v) else f"{int(v)}", ha="center", va="center", fontsize=7, color="black")
 cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02); cb.set_label("Rank (1 = most free-riding)")
-ax.set_title("Rank by specification (S0–S10) and by dropped component (−P … −I)", loc="left", fontsize=9)
-ax.set_xlabel("S0 equal weights · S1 domain weights · S2 payment only · S3 access only · S4 price only · S5 geometric · "
-              "S6 z-score · S7 rank · S8 income-adjusted price · S9 new-drug revenue · S10 excluding US", fontsize=6, loc="left")
+ax.set_title("Rank by specification and by dropped component", loc="left", fontsize=9)
+ax.set_xlabel("S0 equal weights · S1 domain weights · S2 payment only · S3 access only · S4 price only · S5 geometric\n"
+              "S6 z-score · S7 rank · S8 income-adjusted price · S9 new-drug revenue · S10 excluding US (US not scored) · S11 association-basis R&D · −X: component X dropped", fontsize=6.5)
 save(fig, "fig2_rank_robustness")
 
 # ---------------- Figure 3 two-domain map
@@ -72,8 +72,9 @@ pay = S[["P", "R"]].mean(1); acc = S[["A", "D"]].mean(1); rd = S["I"]
 size = df["rev_share_all_innov_pct"].clip(lower=0.3) * 40
 fig, ax = plt.subplots(figsize=(5.2, 4.2))
 sc = ax.scatter(pay, acc, s=size, c=rd, cmap="Greens_r", edgecolor="black", lw=0.6, alpha=0.9, vmin=0, vmax=100)
+OFF = {"JPN": (-38, 8), "FRA": (6, 8), "GBR": (8, -12), "ITA": (8, -14), "CHE": (-60, 6), "DEU": (8, 4), "CAN": (8, 4), "AUS": (8, 4), "KOR": (-52, 8), "USA": (8, 6)}
 for c in df.index:
-    ax.annotate(names[c], (pay[c], acc[c]), xytext=(6, 4), textcoords="offset points", fontsize=7.5)
+    ax.annotate(names[c], (pay[c], acc[c]), xytext=OFF.get(c, (6, 4)), textcoords="offset points", fontsize=7.5)
 ax.axvline(50, color="#bbbbbb", lw=0.7, ls="--"); ax.axhline(50, color="#bbbbbb", lw=0.7, ls="--")
 ax.set_xlabel("Payment domain score (price level, revenue/GDP) →  more free-riding")
 ax.set_ylabel("Access domain score (availability, delay) →  more free-riding")
@@ -91,7 +92,11 @@ for ax, (col, lab, sgn) in zip(axes, pairs):
     d = ext[["FRI_headline", col]].dropna()
     ax.scatter(d[col], d["FRI_headline"], color="#1f4e79", s=18)
     for c in d.index:
-        ax.annotate(c, (d.loc[c, col], d.loc[c, "FRI_headline"]), xytext=(3, 2), textcoords="offset points", fontsize=6.5)
+        dx, dy = (3, 2)
+        if c == "AUS": dx, dy = (-16, -8)
+        if c == "FRA" and "Frech" in col: dx, dy = (3, 5)
+        if c == "ITA": dx, dy = (-16, 2)
+        ax.annotate(c, (d.loc[c, col], d.loc[c, "FRI_headline"]), xytext=(dx, dy), textcoords="offset points", fontsize=6.5)
     rho = d["FRI_headline"].rank().corr(d[col].rank()) * (1 if sgn == 1 else -1)
     ax.set_title(f"ρ = {rho:.2f} (n = {len(d)})", fontsize=8)
     ax.set_xlabel(lab, fontsize=7)

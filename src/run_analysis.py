@@ -36,6 +36,7 @@ specs = {
     "S8 Income-adjusted price":                  dict(overrides={"P": "price_index_income_adj"}),
     "S9 New-drug revenue ratio":                 dict(overrides={"R": "rev_to_gdp_ratio_new_innov"}),
     "S10 Excluding United States (rescaled)":    dict(subset=NONUS),
+    "S11 Association-basis pharma R&D":          dict(overrides={"I": "pharma_rd_pct_gdp_assoc"}),
 }
 spec_scores = pd.DataFrame({k: composite(df, **v)["FRI"] for k, v in specs.items()})
 spec_ranks = spec_scores.rank(ascending=False, method="min")
