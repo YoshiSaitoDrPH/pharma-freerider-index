@@ -5,7 +5,9 @@ pharmaceutical innovation (United States, Japan, Germany, France, United Kingdom
 Australia, South Korea). Companion code and data for the manuscript
 *"Who Pays for Pharmaceutical Innovation? A Reproducible Multi-Dimensional Free-Rider Index for Ten High-Income Countries"*.
 
-Interactive dashboard: `dashboard/index.html` (self-contained; also served via GitHub Pages).
+Interactive dashboard: https://yoshisaitodrph.github.io/pharma-freerider-index/ (self-contained HTML; source in `dashboard/`).
+
+Manuscript files (Value in Health format): `paper/`. Review log and analysis plan: `docs/`.
 
 ## What the index measures
 
