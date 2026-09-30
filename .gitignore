@@ -6,3 +6,4 @@ paper/*.docx
 paper/~$*
 data/raw/_fetch_defra.log
 paper/outreach/
+paper/manuscript_shared.*
