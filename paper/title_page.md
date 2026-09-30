@@ -1,6 +1,6 @@
 # Title Page
 
-**Title:** Who Pays for Pharmaceutical Innovation? A Reproducible Multidimensional Free-Rider Index for Ten High-Income Countries
+**Title:** Who Pays for Pharmaceutical Innovation? A Reproducible Multidimensional Free-Rider Index Across High-Income Countries
 
 **Authors:** Yoshiyuki Saito, PharmD, DrPH^1,2^; Ataru Igarashi, PhD^3^; Rei Goto, PhD^4^
 

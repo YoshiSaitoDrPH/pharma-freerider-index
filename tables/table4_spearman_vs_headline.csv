@@ -10,17 +10,16 @@ S8 Log min-max normalisation,0.9666666666666667
 S9 All-drug price index,0.9500000000000001
 S10 Income-adjusted brand price,0.8166666666666667
 S11 Ability-to-pay adjusted payment,0.8166666666666667
-S12 US net-price adjustment,1.0
-S13 New-drug revenue ratio,0.9166666666666666
-S14 Delay imputed for non-reimbursed drugs,0.9833333333333333
-S15 W.A.I.T. adoption data for EU-5,1.0
-S16 Association-basis pharma R&D,1.0
-S17 Trial hosting replaces R&D input,0.9
-"S18 R&D input dropped (P,R,A,D)",0.9500000000000001
-S19 Six components (+ R&D tax subsidy),0.8666666666666667
-"S20 Seven components (+ tax, + trials)",0.8666666666666667
-S21 Size-adjusted (residual on log GDP),1.0
-S22 Ten countries including United States,0.9500000000000001
+S12 New-drug revenue ratio,0.9166666666666666
+S13 Delay imputed for non-reimbursed drugs,0.9833333333333333
+S14 W.A.I.T. adoption data for EU-5,1.0
+S15 Association-basis pharma R&D,1.0
+S16 Trial hosting replaces R&D input,0.9
+"S17 Payment and adoption only (P,R,A,D)",0.9500000000000001
+S18 Six components (+ R&D tax subsidy),0.8666666666666667
+"S19 Seven components (+ tax, + trials)",0.8666666666666667
+S20 Size-adjusted (residual on log GDP),1.0
+S21 Ten countries including United States,0.9500000000000001
 drop_P,0.9333333333333332
 drop_R,0.9833333333333333
 drop_A,0.9666666666666667

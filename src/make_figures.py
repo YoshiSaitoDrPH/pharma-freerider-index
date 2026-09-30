@@ -48,7 +48,7 @@ save(fig, "fig1_headline_index")
 
 # ---------------- Figure 2 heatmap (nine countries)
 R = ranks.drop(columns="country").loc[base.sort_values("FRI", ascending=False).index]
-R = R.drop(columns=[c for c in R.columns if c.startswith("S22")])  # ten-country spec shown in supplement
+R = R.drop(columns=[c for c in R.columns if c.startswith("S21")])  # ten-country spec shown in supplement
 cols = [c.split(" ", 1)[0] if c.startswith("S") else c.replace("drop_", "−") for c in R.columns]
 fig, ax = plt.subplots(figsize=(7.4, 3.5))
 im = ax.imshow(R.values.astype(float), cmap="RdYlBu", aspect="auto", vmin=1, vmax=9)
@@ -61,8 +61,8 @@ for i in range(R.shape[0]):
 cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02); cb.set_label("Rank (1 = most apparent free-riding)")
 ax.set_title("Rank by specification and by dropped component (nine countries)", loc="left", fontsize=9)
 ax.set_xlabel("S0 headline · S1 domain weights · S2 payment only · S3 adoption only · S4 price only · S5 geometric · S6 z-score · S7 rank · S8 log min–max · S9 all-drug price\n"
-              "S10 income-adj. price · S11 ability-to-pay · S12 US net price · S13 new-drug revenue · S14 imputed delay · S15 W.A.I.T. EU-5 · S16 association R&D\n"
-              "S17 trials replace R&D · S18 R&D dropped · S19 +tax subsidy · S20 +tax +trials · S21 size-adjusted · −X: component X dropped", fontsize=6.3)
+              "S10 income-adj. price · S11 ability-to-pay · S12 new-drug revenue · S13 imputed delay · S14 W.A.I.T. EU-5 · S15 association R&D · S16 trials replace R&D\n"
+              "S17 payment + adoption only · S18 +tax subsidy · S19 +tax +trials · S20 size-adjusted · −X: component X dropped", fontsize=6.3)
 save(fig, "fig2_rank_robustness")
 
 # ---------------- Figure 3: Kolchinsky–Xie decomposition

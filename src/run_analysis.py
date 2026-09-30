@@ -36,17 +36,16 @@ specs = {
     "S9 All-drug price index":                    dict(overrides={"P": "price_index_all_us100"}),
     "S10 Income-adjusted brand price":            dict(overrides={"P": "price_index_brand_income_adj"}),
     "S11 Ability-to-pay adjusted payment":        dict(overrides={"P": "price_index_brand_income_adj", "R": "rev_to_gdp_ratio_progressive"}),
-    "S12 US net-price adjustment":                dict(overrides={"P": "price_index_brand_us_net", "R": "rev_to_gdp_ratio_us_net"}),
-    "S13 New-drug revenue ratio":                 dict(overrides={"R": "rev_to_gdp_ratio_new_innov"}),
-    "S14 Delay imputed for non-reimbursed drugs": dict(overrides={"D": "reimb_delay_imputed"}),
-    "S15 W.A.I.T. adoption data for EU-5":        dict(overrides={"A": "reimb_share_wait_mix", "D": "reimb_delay_wait_mix"}),
-    "S16 Association-basis pharma R&D":           dict(overrides={"I": "pharma_rd_pct_gdp_assoc"}),
-    "S17 Trial hosting replaces R&D input":       dict(overrides={"I": "industry_trials_per_million"}),
-    "S18 R&D input dropped (P,R,A,D)":            dict(comps=["P", "R", "A", "D"]),
-    "S19 Six components (+ R&D tax subsidy)":     dict(comps=ORDER + ["T"]),
-    "S20 Seven components (+ tax, + trials)":     dict(comps=ORDER + ["T", "C"]),
-    "S21 Size-adjusted (residual on log GDP)":    dict(size_adjust=True),
-    "S22 Ten countries including United States":  dict(subset=ALL),
+    "S12 New-drug revenue ratio":                 dict(overrides={"R": "rev_to_gdp_ratio_new_innov"}),
+    "S13 Delay imputed for non-reimbursed drugs": dict(overrides={"D": "reimb_delay_imputed"}),
+    "S14 W.A.I.T. adoption data for EU-5":        dict(overrides={"A": "reimb_share_wait_mix", "D": "reimb_delay_wait_mix"}),
+    "S15 Association-basis pharma R&D":           dict(overrides={"I": "pharma_rd_pct_gdp_assoc"}),
+    "S16 Trial hosting replaces R&D input":       dict(overrides={"I": "industry_trials_per_million"}),
+    "S17 Payment and adoption only (P,R,A,D)":    dict(comps=["P", "R", "A", "D"]),
+    "S18 Six components (+ R&D tax subsidy)":     dict(comps=ORDER + ["T"]),
+    "S19 Seven components (+ tax, + trials)":     dict(comps=ORDER + ["T", "C"]),
+    "S20 Size-adjusted (residual on log GDP)":    dict(size_adjust=True),
+    "S21 Ten countries including United States":  dict(subset=ALL),
 }
 spec_scores = pd.DataFrame({k: composite(df, **v)["FRI"] for k, v in specs.items()}).reindex(ALL)
 spec_ranks = spec_scores.rank(ascending=False, method="min")
@@ -69,6 +68,14 @@ ranks_mc, mc = monte_carlo(df, n=10000)
 mc.insert(0, "country", df.loc[NONUS, "country"]); mc.to_csv(TAB / "table5_montecarlo_rank_intervals.csv")
 _, mc_noswitch = monte_carlo(df, n=10000, use_switches=False); mc_noswitch.insert(0, "country", df.loc[NONUS, "country"]); mc_noswitch.to_csv(TAB / "table5b_montecarlo_no_source_switch.csv")
 _, mc10 = monte_carlo(df, n=10000, subset=ALL); mc10.insert(0, "country", df["country"]); mc10.to_csv(TAB / "table5c_montecarlo_ten_countries.csv")
+# decomposition by source of uncertainty
+from frindex import monte_carlo_component
+dec = {}
+for name, kw in [("weights only", dict(vary_weights=True)), ("normalisation and aggregation only", dict(vary_method=True)),
+                 ("input noise only", dict(vary_noise=True)), ("data source only", dict(vary_source=True))]:
+    _, m_ = monte_carlo_component(df, n=5000, **kw); dec[name] = m_
+decomp = pd.concat({k: v[["rank_median", "rank_p05", "rank_p95", "share_top3", "share_bottom3"]] for k, v in dec.items()}, axis=1)
+decomp.insert(0, "country", df.loc[NONUS, "country"]); decomp.to_csv(TAB / "table5e_montecarlo_decomposition.csv")
 freq = pd.DataFrame({c: np.bincount(ranks_mc[:, j], minlength=len(NONUS) + 1)[1:] / len(ranks_mc) for j, c in enumerate(NONUS)}).T
 freq.columns = [f"rank{r}" for r in range(1, len(NONUS) + 1)]; freq.index.name = "iso3"; freq.insert(0, "country", df.loc[NONUS, "country"]); freq.to_csv(TAB / "table5d_rank_frequency.csv")
 
@@ -134,3 +141,4 @@ print("\nExternal:\n", pd.DataFrame(rows).round(2).to_string())
 print("\nSize:\n", pd.read_csv(TAB / "table6i_component_vs_size.csv", index_col=0).round(2).to_string())
 print("\nLOCO:\n", lcoo.to_string())
 print("\nGap pp:", round(gap.sum(), 1))
+print("\nMC decomposition:\n", decomp.round(2).to_string())

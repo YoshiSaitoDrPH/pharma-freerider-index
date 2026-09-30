@@ -3,7 +3,7 @@
 A reproducible, multi-dimensional **Free-Rider Index** of how ten high-income countries share the cost of
 pharmaceutical innovation (United States, Japan, Germany, France, United Kingdom, Italy, Canada, Switzerland,
 Australia, South Korea). Companion code and data for the manuscript
-*"Who Pays for Pharmaceutical Innovation? A Reproducible Multi-Dimensional Free-Rider Index for Ten High-Income Countries"*.
+*"Who Pays for Pharmaceutical Innovation? A Reproducible Multi-Dimensional Free-Rider Index Across High-Income Countries"*.
 
 Interactive dashboard: https://yoshisaitodrph.github.io/pharma-freerider-index/ (self-contained HTML; source in `dashboard/`).
 

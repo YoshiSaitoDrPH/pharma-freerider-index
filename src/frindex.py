@@ -97,7 +97,7 @@ def equal_importance_weights(S: pd.DataFrame, iters=200):
 NOISE = {"P": ("mult", 0.05), "R": ("mult", 0.05), "A": ("add", 3.0), "D": ("add", 0.3), "I": ("mult", 0.50),
          "G": ("mult", 0.50), "T": ("add", 0.02), "C": ("mult", 0.15)}
 # discrete source switches: component -> list of alternative columns (drawn with equal probability incl. headline)
-SWITCHES = {"P": ["price_index_brand_us100", "price_index_all_us100", "price_index_brand_us_net"],
+SWITCHES = {"P": ["price_index_brand_us100", "price_index_all_us100"],
             "R": ["rev_to_gdp_ratio_all_innov", "rev_to_gdp_ratio_new_innov"],
             "I": ["pharma_berd_pct_gdp", "pharma_rd_pct_gdp_assoc", "industry_trials_per_million"]}
 
@@ -131,6 +131,33 @@ def monte_carlo(df, n=10000, seed=2026, comps=ORDER, subset=NONUS, use_switches=
         "score_mean": scores.mean(0), "score_p05": np.percentile(scores, 5, 0), "score_p95": np.percentile(scores, 95, 0),
     }, index=d.index)
     return ranks, summ
+
+def monte_carlo_component(df, n=5000, seed=7, comps=ORDER, subset=NONUS, vary_weights=False, vary_method=False, vary_noise=False, vary_source=False):
+    """Monte Carlo varying one source of uncertainty at a time (others held at the headline setting)."""
+    rng = np.random.default_rng(seed)
+    d = df if subset is None else df.loc[subset]
+    norms = ["minmax", "zscore", "rank", "log_minmax"]; aggs = ["arithmetic", "geometric"]
+    ranks = np.zeros((n, len(d)), int)
+    for i in range(n):
+        w = dict(zip(comps, rng.dirichlet(np.ones(len(comps))))) if vary_weights else None
+        ov = {}
+        if vary_source:
+            for k, alts in SWITCHES.items():
+                if k in comps: ov[k] = alts[rng.integers(len(alts))]
+        X = raw_matrix(d, comps, ov).copy()
+        if vary_noise:
+            for k in comps:
+                kind, sc = NOISE.get(k, ("mult", 0.0))
+                X[k] = X[k] * np.exp(rng.normal(0, sc, len(X))) if kind == "mult" else X[k] + rng.normal(0, sc, len(X))
+                if k == "A": X[k] = X[k].clip(0, 100)
+                if k == "D": X[k] = X[k].clip(lower=0)
+        nm = norms[rng.integers(len(norms))] if vary_method else "minmax"
+        ag = aggs[rng.integers(len(aggs))] if vary_method else "arithmetic"
+        fri = aggregate(normalise(X, nm), w, ag)
+        ranks[i] = fri.rank(ascending=False, method="min").values
+    k = len(d)
+    return ranks, pd.DataFrame({"rank_median": np.median(ranks, 0), "rank_p05": np.percentile(ranks, 5, 0), "rank_p95": np.percentile(ranks, 95, 0),
+                                "share_top3": (ranks <= 3).mean(0), "share_bottom3": (ranks >= k - 2).mean(0)}, index=d.index)
 
 def leave_one_component_out(df, comps=ORDER, **kw):
     out = {}

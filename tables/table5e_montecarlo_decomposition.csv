@@ -1,0 +1,12 @@
+,country,weights only,weights only,weights only,weights only,weights only,normalisation and aggregation only,normalisation and aggregation only,normalisation and aggregation only,normalisation and aggregation only,normalisation and aggregation only,input noise only,input noise only,input noise only,input noise only,input noise only,data source only,data source only,data source only,data source only,data source only
+,,rank_median,rank_p05,rank_p95,share_top3,share_bottom3,rank_median,rank_p05,rank_p95,share_top3,share_bottom3,rank_median,rank_p05,rank_p95,share_top3,share_bottom3,rank_median,rank_p05,rank_p95,share_top3,share_bottom3
+iso3,,,,,,,,,,,,,,,,,,,,,
+JPN,Japan,6.0,4.0,8.0,0.0398,0.298,5.0,5.0,6.0,0.0,0.0,5.0,4.0,8.0,0.0024,0.1644,7.0,3.0,7.0,0.0808,0.5974
+DEU,Germany,8.0,5.0,9.0,0.0052,0.8196,8.0,7.0,9.0,0.0,1.0,8.0,7.0,9.0,0.0,0.975,9.0,8.0,9.0,0.0,1.0
+FRA,France,4.0,3.0,6.0,0.1756,0.0088,4.0,3.0,4.0,0.36,0.0,4.0,4.0,6.0,0.0196,0.0062,4.0,4.0,5.0,0.0,0.0
+GBR,United Kingdom,6.0,3.0,8.0,0.054,0.358,6.0,4.0,7.0,0.0,0.135,6.0,4.0,9.0,0.002,0.3194,6.0,4.0,6.0,0.0,0.0
+ITA,Italy,7.0,5.0,9.0,0.0002,0.6542,7.0,6.0,8.0,0.0,0.865,7.0,5.0,8.0,0.0,0.6096,6.0,5.0,8.0,0.0,0.4026
+CAN,Canada,3.0,2.0,7.0,0.7254,0.0714,3.0,3.0,6.0,0.64,0.0,3.0,3.0,3.0,0.976,0.0,3.0,2.0,4.0,0.9192,0.0
+CHE,Switzerland,8.0,5.0,9.0,0.0,0.79,8.0,7.0,9.0,0.0,1.0,9.0,6.0,9.0,0.0,0.9254,8.0,7.0,9.0,0.0,1.0
+AUS,Australia,2.0,2.0,3.0,1.0,0.0,2.0,2.0,2.0,1.0,0.0,2.0,2.0,2.0,1.0,0.0,2.0,2.0,3.0,1.0,0.0
+KOR,South Korea,1.0,1.0,1.0,0.9998,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0
