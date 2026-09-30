@@ -7,7 +7,7 @@
 [Prof. Anirban Basu (CHOICE Institute, University of Washington) has been invited; he will be added as fourth author only after his acceptance and substantive contribution.]
 
 ^1^ Department of Health Economics and Outcomes Research, Graduate School of Pharmaceutical Sciences, The University of Tokyo, Tokyo, Japan (where the work was performed)
-^2^ Present address: Graduate School of Business Administration (Keio Business School), Keio University, Yokohama, Japan (Project Researcher) [English name and address to be confirmed]
+^2^ Present address: Graduate School of Business Administration (Keio Business School), Keio University, Yokohama, Japan (Project Assistant Professor) [English name and address to be confirmed]
 ^3^ [Ataru Igarashi's current primary affiliation to be confirmed]
 ^4^ Graduate School of Business Administration (Keio Business School), Keio University, Yokohama, Japan [to be confirmed]
 
