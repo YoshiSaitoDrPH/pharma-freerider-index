@@ -23,7 +23,7 @@ Please consider the enclosed manuscript, "Who Pays for Pharmaceutical Innovation
 
 **Corresponding author.** Yoshiyuki Saito, PharmD, DrPH; Keio University, Tokyo, Japan (present address; the work was performed at the Graduate School of Pharmaceutical Sciences, The University of Tokyo); e-mail [to be confirmed].
 
-**Authors.** Yoshiyuki Saito, Ataru Igarashi, Rei Goto, Anirban Basu. Prof. Basu, whose model the index operationalizes, serves on the journal's Editorial Advisory Board; we disclose this and ask that he not be involved in the editorial handling of the manuscript.
+**Authors.** Yoshiyuki Saito, Ataru Igarashi, Rei Goto. Prof. Anirban Basu (University of Washington), whose model the index operationalizes and who serves on the journal's Editorial Advisory Board, has been sent the manuscript for comment; he is not an author of this version, and we ask that he not be involved in the editorial handling of the manuscript.
 
 Thank you for your consideration.
 
