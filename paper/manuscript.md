@@ -46,7 +46,7 @@ We examined 22 alternative specifications, defined in Table 2: domain weights; s
 
 ## Software and transparency
 
-Analyses used Python 3.10 with pandas, NumPy, and Matplotlib. Analysis code was drafted with the assistance of a large language model (Claude Fable 5.1, Anthropic, accessed through Claude Code in September 2026) under the author's specification; the author reviewed, executed, and checked every function against hand calculations, verified every data value against the cited source, and all reported numbers are produced by the released scripts, consistent with ELEVATE-GenAI guidance.[39] No AI tool generated or altered data. Code, data, tables, figures, and a self-contained interactive dashboard are openly available [repository address withheld for anonymized review; MIT license for code, CC BY 4.0 for documentation]. Patients were not involved in this research, which uses country-level aggregates; sex and gender dimensions could not be analyzed at this level of aggregation.
+Analyses used Python 3.10 (pandas, NumPy, Matplotlib). Code was drafted with the assistance of a large language model (Claude Fable 5.1, Anthropic, accessed through Claude Code in September 2026) under the first author's specification; the authors reviewed, executed, and checked every function against hand calculations, a second author independently verified every transcribed value against its source, and all reported numbers are produced by the released scripts, consistent with ELEVATE-GenAI guidance.[39] No AI tool generated or altered data. Code, data, tables, figures, and a self-contained interactive dashboard are openly available [repository address withheld for anonymized review; MIT license for code, CC BY 4.0 for documentation]. Patients were not involved in this research, which uses country-level aggregates; sex and gender dimensions could not be analyzed at this level of aggregation.
 
 # Results
 
@@ -104,7 +104,7 @@ A five-component Free-Rider Index built from published data identifies a stable 
 
 # Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
-During the preparation of this work the author used Claude Fable 5.1 (Anthropic), accessed through Claude Code, in order to draft analysis code, compile source lists, and prepare first drafts of text, tables, and figure scripts under the author's direction. After using this tool, the author reviewed and edited the content as needed, verified every data value against the cited primary source, and takes full responsibility for the content of the publication.
+During the preparation of this work the authors used Claude Fable 5.1 (Anthropic), accessed through Claude Code, in order to draft analysis code, compile source lists, and prepare first drafts of text, tables, and figure scripts under the first author's direction. After using this tool, the authors reviewed and edited the content as needed, verified every data value against the cited primary source, and take full responsibility for the content of the publication.
 
 # References
 

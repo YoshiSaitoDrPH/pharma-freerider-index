@@ -13,7 +13,7 @@ Please consider the enclosed manuscript, "Who Pays for Pharmaceutical Innovation
 
 **Statement of proprietary data.** No proprietary data, models, or methodology were used. All inputs are publicly available and are reproduced with source references in the repository; the complete analysis code is released under an MIT license.
 
-**Funding/Support.** The author received no financial support for this research.
+**Funding/Support.** The authors received no financial support for this research.
 
 **Role of sponsor.** Not applicable; no sponsor was involved and publication was not contingent on any third party's approval.
 
@@ -21,10 +21,12 @@ Please consider the enclosed manuscript, "Who Pays for Pharmaceutical Innovation
 
 **Use of AI.** Generative AI (Claude Fable 5.1, Anthropic) assisted with code drafting and first drafts of text under the author's direction; this is disclosed on the title page, in the Methods, and in a declaration before the reference list, in accordance with the journal's and Elsevier's policies.
 
-**Corresponding author.** Yoshiyuki Saito, PharmD, DrPH; Department of Health Economics and Outcomes Research, Graduate School of Pharmaceutical Sciences, The University of Tokyo; 7-3-1 Hongo, Bunkyo-ku, Tokyo 113-0033, Japan; e-mail [to be confirmed].
+**Corresponding author.** Yoshiyuki Saito, PharmD, DrPH; Keio University, Tokyo, Japan (present address; the work was performed at the Graduate School of Pharmaceutical Sciences, The University of Tokyo); e-mail [to be confirmed].
+
+**Authors.** Yoshiyuki Saito, Rei Goto, Ataru Igarashi. Prof. Anirban Basu (University of Washington), whose model the index operationalizes and who serves on the journal's Editorial Advisory Board, was consulted on the framing; he is not an author, and we ask that he not be involved in handling the manuscript.
 
 Thank you for your consideration.
 
 Sincerely,
 
-Yoshiyuki Saito
+Yoshiyuki Saito, on behalf of the authors
