@@ -25,11 +25,11 @@ Sources: P, RAND international price comparison using IQVIA MIDAS 2022 manufactu
 |---|---:|---:|---:|---:|---:|
 | South Korea | 97.4 | 1 | 1 (1-2) | 99% | 0% |
 | Australia | 74.8 | 2 | 2 (1-7) | 83% | 6% |
-| Canada | 59.9 | 3 | 3 (2-8) | 60% | 14% |
-| France | 48.7 | 4 | 4 (3-7) | 22% | 8% |
-| Japan | 42.7 | 5 | 7 (3-9) | 9% | 53% |
-| United Kingdom | 40.2 | 6 | 5 (3-8) | 17% | 21% |
-| Italy | 35.8 | 7 | 6 (3-9) | 6% | 41% |
+| Canada | 59.9 | 3 | 3 (2-8) | 60% | 15% |
+| France | 48.7 | 4 | 4 (3-7) | 21% | 8% |
+| Japan | 42.7 | 5 | 7 (3-9) | 9% | 54% |
+| United Kingdom | 40.2 | 6 | 5 (3-8) | 18% | 20% |
+| Italy | 35.8 | 7 | 6 (3-9) | 5% | 41% |
 | Germany | 28.5 | 8 | 8 (5-9) | 1% | 88% |
 | Switzerland | 27.4 | 9 | 7 (4-9) | 4% | 68% |
 

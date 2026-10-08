@@ -67,6 +67,7 @@ pd.Series(rho, name="spearman_vs_headline").to_csv(TAB / "table4_spearman_vs_hea
 ranks_mc, mc = monte_carlo(df, n=10000)
 mc.insert(0, "country", df.loc[NONUS, "country"]); mc.to_csv(TAB / "table5_montecarlo_rank_intervals.csv")
 _, mc_noswitch = monte_carlo(df, n=10000, use_switches=False); mc_noswitch.insert(0, "country", df.loc[NONUS, "country"]); mc_noswitch.to_csv(TAB / "table5b_montecarlo_no_source_switch.csv")
+_, mc_adcorr = monte_carlo(df, n=10000, ad_corr=-0.7); mc_adcorr.insert(0, "country", df.loc[NONUS, "country"]); mc_adcorr.to_csv(TAB / "table5f_montecarlo_AD_correlated_noise.csv")
 _, mc10 = monte_carlo(df, n=10000, subset=ALL); mc10.insert(0, "country", df["country"]); mc10.to_csv(TAB / "table5c_montecarlo_ten_countries.csv")
 # decomposition by source of uncertainty
 from frindex import monte_carlo_component
@@ -115,9 +116,14 @@ contrib = S9 / len(ORDER); contrib.insert(0, "country", df.loc[NONUS, "country"]
 
 # ---- Revenue gap to GDP-share parity
 c9 = df.loc[NONUS]
-gap = c9["rev_share_all_innov_pct"] * (1 / c9["rev_to_gdp_ratio_all_innov"] - 1)
-pd.DataFrame({"country": c9["country"], "rev_share_pct": c9["rev_share_all_innov_pct"], "ratio": c9["rev_to_gdp_ratio_all_innov"],
-              "multiple_to_parity": 1 / c9["rev_to_gdp_ratio_all_innov"], "gap_pp_of_OECD_innovative_revenue": gap}).to_csv(TAB / "table9_revenue_gap_to_parity.csv")
+rs = c9["rev_share_all_innov_pct"] / 100; gsh = rs / c9["rev_to_gdp_ratio_all_innov"]   # GDP share of OECD
+gap = (gsh - rs) * 100                                       # definition A: ratio -> 1 at the observed OECD total (others fixed)
+delta_fp = (gsh.sum() - rs.sum()) / (1 - gsh.sum())           # definition B: fixed point where post-change revenue shares equal GDP shares
+gap_fp = (gsh * (1 + delta_fp) - rs) * 100                    # each country's increase under definition B, pp of current OECD revenue
+pd.DataFrame({"country": c9["country"], "rev_share_pct": c9["rev_share_all_innov_pct"], "gdp_share_pct": gsh * 100, "ratio": c9["rev_to_gdp_ratio_all_innov"],
+              "multiple_to_parity": 1 / c9["rev_to_gdp_ratio_all_innov"], "gap_pp_of_OECD_innovative_revenue": gap,
+              "gap_fixed_point_pp": gap_fp}).to_csv(TAB / "table9_revenue_gap_to_parity.csv")
+pd.Series({"gap_A_pct_of_current_total": gap.sum(), "gap_B_fixed_point_pct": delta_fp * 100, "nine_rev_share_pct": rs.sum() * 100, "nine_gdp_share_pct": gsh.sum() * 100}, name="value").to_csv(TAB / "table9b_parity_totals.csv")
 
 # ---- JSON for dashboard (ten countries; dashboard can exclude US)
 out = {"generated": pd.Timestamp.today().strftime("%Y-%m-%d"),
@@ -140,5 +146,6 @@ print("\nSpearman vs headline:\n", pd.Series(rho).round(2).to_string())
 print("\nExternal:\n", pd.DataFrame(rows).round(2).to_string())
 print("\nSize:\n", pd.read_csv(TAB / "table6i_component_vs_size.csv", index_col=0).round(2).to_string())
 print("\nLOCO:\n", lcoo.to_string())
-print("\nGap pp:", round(gap.sum(), 1))
+print("\nGap pp (A, total fixed):", round(gap.sum(), 1), "| fixed point (B):", round(delta_fp * 100, 1))
+print("\nMC A/D correlated noise:\n", mc_adcorr[["country","rank_median","share_top3","share_bottom3"]].sort_values("rank_median").round(3).to_string())
 print("\nMC decomposition:\n", decomp.round(2).to_string())

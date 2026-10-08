@@ -135,13 +135,13 @@ Spearman rank correlation between sources: availability 0.70; interval versus W.
 |---|---|---:|---:|---|---:|
 | South Korea | 1 (1-2) | 99% | 0% | 1 (1-3) | 97% |
 | Australia | 2 (1-3) | 100% | 0% | 3 (1-9) | 78% |
-| Canada | 3 (2-9) | 51% | 21% | 3 (1-8) | 75% |
+| Canada | 3 (2-9) | 51% | 21% | 3 (1-8) | 74% |
 | France | 4 (3-7) | 27% | 6% | 5 (3-7) | 13% |
-| Japan | 6 (3-8) | 9% | 31% | 6 (2-9) | 13% |
-| United Kingdom | 6 (3-8) | 12% | 30% | 6 (3-8) | 12% |
+| Japan | 5 (3-8) | 8% | 30% | 6 (2-9) | 13% |
+| United Kingdom | 6 (3-8) | 11% | 30% | 6 (3-8) | 13% |
 | Italy | 7 (4-9) | 1% | 61% | 6 (3-9) | 7% |
 | Germany | 8 (5-9) | 1% | 82% | 8 (5-9) | 1% |
-| Switzerland | 8 (4-9) | 1% | 69% | 8 (4-9) | 3% |
+| Switzerland | 8 (4-9) | 1% | 70% | 8 (4-9) | 4% |
 | United States | — | — | — | 10 (10-10) | 0% |
 
 ## Appendix Table S9b. Monte Carlo rank statistics by source of uncertainty (nine countries; 5,000 draws each; other settings held at the headline)
@@ -160,6 +160,24 @@ Spearman rank correlation between sources: availability 0.70; interval versus W.
 
 Data-source draws alternate between the brand-name and all-drug price index, the all-innovative and new-drug revenue ratios, and the OECD, association-based and trial-hosting R&D series; these are alternative definitions rather than draws around a common true value.
 
+## Appendix Table S9c. Monte Carlo with correlated noise for the adoption components
+
+Availability (A) and interval (D) come from the same dataset, so their measurement errors may be correlated. The headline Monte Carlo draws independent noise; here the noise shocks for A and D are drawn with correlation −0.7 or +0.7 (all other settings unchanged).
+
+| Country | Top-3 share, independent | Top-3, ρ = −0.7 | Top-3, ρ = +0.7 | Bottom-3 share, independent | Bottom-3, ρ = −0.7 | Bottom-3, ρ = +0.7 |
+|---|---:|---:|---:|---:|---:|---:|
+| South Korea | 0.99 | 0.99 | 0.99 | 0.00 | 0.00 | 0.00 |
+| Australia | 0.83 | 0.83 | 0.83 | 0.06 | 0.06 | 0.06 |
+| Canada | 0.60 | 0.60 | 0.61 | 0.15 | 0.15 | 0.15 |
+| France | 0.21 | 0.21 | 0.21 | 0.08 | 0.09 | 0.07 |
+| Japan | 0.09 | 0.09 | 0.09 | 0.54 | 0.54 | 0.54 |
+| United Kingdom | 0.18 | 0.18 | 0.18 | 0.20 | 0.21 | 0.20 |
+| Italy | 0.05 | 0.06 | 0.05 | 0.41 | 0.41 | 0.41 |
+| Germany | 0.01 | 0.01 | 0.01 | 0.88 | 0.87 | 0.88 |
+| Switzerland | 0.04 | 0.04 | 0.04 | 0.68 | 0.68 | 0.68 |
+
+Geometric aggregation: because min-max normalization produces zeros, scores are shifted by a constant (1 minus the minimum) before taking logarithms and shifted back after exponentiation.
+
 
 ## Appendix Table S10. Leave-one-country-out ranks (rank among the remaining eight)
 
@@ -177,20 +195,20 @@ Data-source draws alternate between the brand-name and all-drug price index, the
 
 ## Appendix Table S11. Innovative-drug revenue relative to GDP share and the gap to parity
 
-| Country | Share of OECD innovative-drug revenue, % | Revenue share ÷ GDP share | Multiple required to reach parity | Gap, percentage points of OECD innovative-drug revenue |
-|---|---:|---:|---:|---:|
-| South Korea | 0.83 | 0.21 | 4.76 | 3.12 |
-| Australia | 1.09 | 0.49 | 2.04 | 1.13 |
-| Canada | 2.35 | 0.74 | 1.35 | 0.83 |
-| France | 3.43 | 0.67 | 1.49 | 1.69 |
-| Japan | 5.83 | 0.73 | 1.37 | 2.16 |
-| United Kingdom | 2.78 | 0.56 | 1.79 | 2.18 |
-| Italy | 3.25 | 0.76 | 1.32 | 1.03 |
-| Germany | 4.32 | 0.58 | 1.72 | 3.13 |
-| Switzerland | 0.62 | 0.61 | 1.64 | 0.40 |
-| Total, nine countries | 24.5 | | | 15.7 |
+| Country | Share of OECD innovative-drug revenue, % | Share of OECD GDP, % | Revenue share ÷ GDP share | Increase to parity, definition A (pp of current OECD revenue) | Increase to parity, definition B (pp of current OECD revenue) |
+|---|---:|---:|---:|---:|---:|
+| South Korea | 0.83 | 3.95 | 0.21 | 3.12 | 4.16 |
+| Australia | 1.09 | 2.22 | 0.49 | 1.13 | 1.72 |
+| Canada | 2.35 | 3.18 | 0.74 | 0.83 | 1.66 |
+| France | 3.43 | 5.12 | 0.67 | 1.69 | 3.03 |
+| Japan | 5.83 | 7.99 | 0.73 | 2.16 | 4.25 |
+| United Kingdom | 2.78 | 4.96 | 0.56 | 2.18 | 3.48 |
+| Italy | 3.25 | 4.28 | 0.76 | 1.03 | 2.15 |
+| Germany | 4.32 | 7.45 | 0.58 | 3.13 | 5.08 |
+| Switzerland | 0.62 | 1.02 | 0.61 | 0.40 | 0.66 |
+| Total, nine countries | 24.5 | 40.2 | | 15.7 | 26.2 |
 
-Source: HHS-ASPE (2026) Tables 1 and 3. Parity means a revenue share equal to the GDP share, evaluated at the observed OECD total (the gap is expressed in percentage points of current OECD innovative-drug revenue; if all nine countries closed the gap, total revenue would rise by the sum shown and shares would be re-based). Proportionality to GDP is a benchmark, not a welfare optimum; Ramsey and value-based differential pricing imply contributions that rise more than proportionally with income.
+Source: HHS-ASPE (2026) Tables 1 and 3. Two definitions of parity are shown because they differ materially. Definition A raises each country's revenue until its revenue-to-GDP ratio equals the current OECD average (1.0), holding all other countries' revenue and the OECD total fixed; the nine increases sum to about 16% of current OECD innovative-drug revenue. Definition B is the fixed point at which, after the increases, each of the nine countries' share of the enlarged OECD total equals its GDP share, with US and other-country revenue held fixed; this requires an increase of about 26% of current OECD revenue (Δ = (G − S)/(1 − G), where G and S are the nine countries' combined GDP and revenue shares, 40.2% and 24.5%). The 4%-24% and 7%-39% ranges of additional new drugs in the main text apply the 0.25-1.5 elasticity range to definitions A and B respectively; they are long-run scenarios that hold volumes, prices elsewhere, and the value of what is developed constant, and count products rather than health gains. Proportionality to GDP is a benchmark, not a welfare optimum; Ramsey and value-based differential pricing imply contributions that rise more than proportionally with income.
 
 ## Appendix Figure S1. Principal component biplot (nine countries)
 

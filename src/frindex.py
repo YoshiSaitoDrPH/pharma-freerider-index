@@ -101,7 +101,8 @@ SWITCHES = {"P": ["price_index_brand_us100", "price_index_all_us100"],
             "R": ["rev_to_gdp_ratio_all_innov", "rev_to_gdp_ratio_new_innov"],
             "I": ["pharma_berd_pct_gdp", "pharma_rd_pct_gdp_assoc", "industry_trials_per_million"]}
 
-def monte_carlo(df, n=10000, seed=2026, comps=ORDER, subset=NONUS, use_switches=True, noise=NOISE):
+def monte_carlo(df, n=10000, seed=2026, comps=ORDER, subset=NONUS, use_switches=True, noise=NOISE, ad_corr=0.0):
+    """ad_corr: correlation of the noise shocks applied to A and D (shared data source); 0 = independent."""
     rng = np.random.default_rng(seed)
     d = df if subset is None else df.loc[subset]
     norms = ["minmax", "zscore", "rank", "log_minmax"]; aggs = ["arithmetic", "geometric"]
@@ -113,10 +114,12 @@ def monte_carlo(df, n=10000, seed=2026, comps=ORDER, subset=NONUS, use_switches=
             for k, alts in SWITCHES.items():
                 if k in comps: ov[k] = alts[rng.integers(len(alts))]
         X = raw_matrix(d, comps, ov).copy()
+        zA = rng.normal(0, 1, len(X)); zD = ad_corr * zA + np.sqrt(1 - ad_corr ** 2) * rng.normal(0, 1, len(X))
         for k in comps:
             kind, sc = noise.get(k, ("mult", 0.0))
-            if kind == "mult": X[k] = X[k] * np.exp(rng.normal(0, sc, len(X)))
-            else: X[k] = X[k] + rng.normal(0, sc, len(X))
+            z = zA if k == "A" else (zD if k == "D" else rng.normal(0, 1, len(X)))
+            if kind == "mult": X[k] = X[k] * np.exp(sc * z)
+            else: X[k] = X[k] + sc * z
             if COMPONENTS[k][1] == -1 and k in ("A",): X[k] = X[k].clip(0, 100)
             if k == "D": X[k] = X[k].clip(lower=0)
         S = normalise(X, norms[rng.integers(len(norms))])
