@@ -1,4 +1,5 @@
 variable,source_id,year
+frech_contribution_per_capita_usd_pub,FRECH2026,2018
 frech_contribution_usd_bn,FRECH2026,2018
 kolchinsky_freeriding_index_pct,KOLCHINSKY2025,2022 prices
 pharma_rd_pct_gdp_assoc,EFPIA_FIGURES2026,2024

@@ -24,14 +24,14 @@ Sources: P, RAND international price comparison using IQVIA MIDAS 2022 manufactu
 | Country | Headline score (0-100) | Headline rank | Median rank (5th-95th percentile) | Share of specifications in top 3 | Share of specifications in bottom 3 |
 |---|---:|---:|---:|---:|---:|
 | South Korea | 97.4 | 1 | 1 (1-2) | 99% | 0% |
-| Australia | 74.8 | 2 | 2 (1-7) | 83% | 6% |
-| Canada | 59.9 | 3 | 3 (2-8) | 60% | 15% |
-| France | 48.7 | 4 | 4 (3-7) | 21% | 8% |
-| Japan | 42.7 | 5 | 7 (3-9) | 9% | 54% |
-| United Kingdom | 40.2 | 6 | 5 (3-8) | 18% | 20% |
-| Italy | 35.8 | 7 | 6 (3-9) | 5% | 41% |
-| Germany | 28.5 | 8 | 8 (5-9) | 1% | 88% |
-| Switzerland | 27.4 | 9 | 7 (4-9) | 4% | 68% |
+| Australia | 74.8 | 2 | 2 (1-7) | 84% | 6% |
+| Canada | 59.9 | 3 | 3 (2-8) | 54% | 20% |
+| France | 48.7 | 4 | 4 (2-7) | 27% | 8% |
+| Japan | 42.7 | 5 | 6 (2-9) | 16% | 36% |
+| United Kingdom | 40.2 | 6 | 6 (3-8) | 12% | 29% |
+| Italy | 35.8 | 7 | 6 (4-9) | 3% | 49% |
+| Germany | 28.5 | 8 | 8 (5-9) | 1% | 85% |
+| Switzerland | 27.4 | 9 | 7 (4-9) | 4% | 67% |
 
 **Panel B. Spearman rank correlation of alternative specifications with the headline index**
 
@@ -45,7 +45,7 @@ Sources: P, RAND international price comparison using IQVIA MIDAS 2022 manufactu
 | S6 z-score normalisation | 1.00 | S19 Seven components (+ tax, + trials) | 0.87 |
 | S7 Rank normalisation | 0.97 | S20 Size-adjusted (residual on log GDP) | 1.00 |
 | S8 Log min-max normalisation | 0.97 | S21 Ten countries including United States | 0.95 |
-| S9 All-drug price index | 0.95 | Drop component P | 0.93 |
+| S9 All-drug price index | 1.00 | Drop component P | 0.93 |
 | S10 Income-adjusted brand price | 0.82 | Drop component R | 0.98 |
 | S11 Ability-to-pay adjusted payment | 0.82 | Drop component A | 0.97 |
 | S12 New-drug revenue ratio | 0.92 | Drop component D | 0.98 |
@@ -62,7 +62,7 @@ Sources: P, RAND international price comparison using IQVIA MIDAS 2022 manufactu
 | Pharmaceutical R&D | 0.37 | 0.35 | 0.24 | -0.28 |
 | Variance explained | 52.6% | 22.4% | | |
 
-Monte Carlo specifications draw weights from a flat Dirichlet distribution; a normalization method (min-max, z-score, rank, log min-max); an aggregation rule (arithmetic, geometric); calibrated input noise (log-normal with σ = 0.05 for P and R and σ = 0.50 for I; normal with SD 3 percentage points for A and 0.3 years for D); and, for P, R, and I, a randomly chosen data source among the alternatives listed below. Shares of specifications are frequencies under this prior, not probabilities. Specifications: S1 domain weights (one third each for payment, adoption, and R&D); S2 payment components only; S3 adoption components only; S4 brand price only; S5 geometric aggregation; S6 z-score normalization; S7 rank normalization; S8 log min-max normalization; S9 all-drug price index in place of brand price; S10 brand price divided by relative GDP per capita; S11 ability-to-pay adjustment of both payment components (income elasticity 1.3); S12 revenue contribution for drugs launched after 2020; S13 delay imputed for non-reimbursed drugs (6.5-year follow-up horizon); S14 EFPIA W.A.I.T. availability and time to availability substituted for the five European countries; S15 association-based R&D series; S16 industry-sponsored trial starts per million population replace R&D input; S17 payment and adoption components only (the four indicators closest to Basu's model); S18 six components adding the OECD implied R&D tax subsidy rate; S19 seven components adding tax subsidy and trial hosting; S20 each normalized component residualized on log GDP before aggregation; S21 ten countries including the United States. A uniform adjustment of US prices or revenue (for example RAND's 37.7% gross-to-net reduction) leaves all nine-country scores unchanged by construction, because min-max normalization is invariant to a common positive scaling, and is therefore not listed as a specification. Abbreviations: GDP, gross domestic product; PC, principal component; R&D, research and development.
+Monte Carlo specifications draw weights from a flat Dirichlet distribution; a normalization method (min-max, z-score, rank, log min-max); an aggregation rule (arithmetic, geometric); calibrated input noise (log-normal with σ = 0.05 for P and R and σ = 0.50 for I; normal with SD 3 percentage points for A and 0.3 years for D); and, for P, R, and I, a randomly chosen data source among the alternatives listed below. Shares of specifications are frequencies under this prior, not probabilities. Specifications: S1 domain weights (one third each for payment, adoption, and R&D); S2 payment components only; S3 adoption components only; S4 brand price only; S5 geometric aggregation; S6 z-score normalization; S7 rank normalization; S8 log min-max normalization; S9 all-drug price index in place of brand price; S10 brand price divided by relative GDP per capita; S11 ability-to-pay adjustment of both payment components (income elasticity 1.3); S12 revenue contribution for drugs launched after the first quarter of 2020; S13 delay imputed for non-reimbursed drugs (6.5-year follow-up horizon); S14 EFPIA W.A.I.T. availability and time to availability substituted for the five European countries; S15 association-based R&D series; S16 industry-sponsored trial starts per million population replace R&D input; S17 payment and adoption components only (the four indicators closest to Basu's model); S18 six components adding the OECD implied R&D tax subsidy rate; S19 seven components adding tax subsidy and trial hosting; S20 each normalized component residualized on log GDP before aggregation; S21 ten countries including the United States. A uniform adjustment of US prices or revenue (for example RAND's 37.7% gross-to-net reduction) leaves all nine-country scores unchanged by construction, because min-max normalization is invariant to a common positive scaling, and is therefore not listed as a specification. Abbreviations: GDP, gross domestic product; PC, principal component; R&D, research and development.
 
 ## Figure legends
 

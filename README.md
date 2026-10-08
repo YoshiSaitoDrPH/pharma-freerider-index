@@ -17,7 +17,7 @@ This repository turns that idea into a transparent, adjustable index built from 
 
 | Id | Component | Domain | Direction | Source |
 |---|---|---|---|---|
-| P | Price level, all drugs, % of US price (2022) | Payment | lower price = more free-riding | RAND RR-A788-3 (2024), Table B.2 |
+| P | Price level, brand-name originator drugs, % of US price (2022) | Payment | lower price = more free-riding | RAND RR-A788-3 (2024), Appendix Table B.1 (all-drug index from the same table as a sensitivity analysis) |
 | R | Innovative-drug revenue share ÷ GDP share (2020–25) | Payment | lower ratio = more | HHS-ASPE Issue Brief (June 2026), Table 3 |
 | A | Share of 225 US-first novel drugs (2014–19) publicly reimbursed by 2023 | Access | lower share = more | Philipson et al. (Aug 2026) |
 | D | Mean reimbursement delay after US launch, years | Access | longer = more | Philipson et al. (Aug 2026), Table 1 |

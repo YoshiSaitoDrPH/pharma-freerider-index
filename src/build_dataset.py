@@ -138,7 +138,7 @@ sh = wide["rev_share_all_innov_pct"].copy(); sh_us = sh["USA"] * NET
 sh_adj = sh * (100.0 / (sh.drop("USA").sum() + sh_us)); sh_adj["USA"] = sh_us * (100.0 / (sh.drop("USA").sum() + sh_us))
 gdp_share = wide["rev_share_all_innov_pct"] / wide["rev_to_gdp_ratio_all_innov"]
 wide["rev_to_gdp_ratio_us_net"] = sh_adj / gdp_share
-wide["frech_contribution_per_capita_usd"] = wide["frech_contribution_usd_bn"] * 1e9 / wide["population_2018"]
+wide["frech_contribution_per_capita_usd"] = wide["frech_contribution_per_capita_usd_pub"].where(wide["frech_contribution_per_capita_usd_pub"].notna(), wide["frech_contribution_usd_bn"] * 1e9 / wide["population_2018"])  # Frech et al 2026 Table 1 per-capita column (all nine countries)
 wide.insert(0, "country", [NAMES[c] for c in ISO3])
 wide.index.name = "iso3"
 wide.to_csv(PROC / "countries.csv")
