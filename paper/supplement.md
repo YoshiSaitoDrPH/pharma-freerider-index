@@ -228,16 +228,16 @@ File figures/figS4_leave_one_country_out.png.
 
 ## Appendix S12. ELEVATE-GenAI items relevant to AI-assisted code development
 
-- Tool: Claude Fable 5.1 (Anthropic), accessed through Claude Code, September 2026.
-- Tasks: drafting Python analysis and figure scripts, drafting data-provenance files, compiling source lists, and drafting manuscript text under the author's specification.
-- Human oversight: the author specified the index design, reviewed every script, executed all code, checked outputs against hand calculations (min-max scores and equal-weight means for two countries), and verified every transcribed data value against the cited source document.
+- Tool: Claude Fable 5.1 (Anthropic), accessed through Claude Code, September-November 2026.
+- Tasks: drafting Python analysis and figure scripts, drafting data-provenance files, compiling source lists, and drafting manuscript text under the first author's specification.
+- Human oversight: the first author specified the index design, reviewed every script, executed all code, checked outputs against hand calculations (min-max scores and equal-weight means for two countries), and a second author independently verified every transcribed data value against the cited source document.
 - Reproducibility: all outputs are regenerated deterministically by the released scripts (Monte Carlo seed 2026).
 - Limitations: no AI-generated content was used as a data source; the model did not access proprietary data.
 
 ## Supplement references
 
 Bae EY, Kim HJ, Lee HJ, et al. Eight-year experience of using HTA in drug reimbursement: South Korea. Health Policy. 2016;120(6):612-620. doi:10.1016/j.healthpol.2016.03.013
-Claxton K, Martin S, Soares M, et al. Methods for the estimation of the National Institute for Health and Care Excellence cost-effectiveness threshold. Health Technol Assess. 2015;19(14):1-504. doi:10.3310/hta19140
+Claxton K, Martin S, Soares M, et al. Methods for the estimation of the National Institute for Health and Care Excellence cost-effectiveness threshold. Health Technol Assess. 2015;19(14):1-503, v-vi. doi:10.3310/hta19140
 Edney LC, Haji Ali Afzali H, Cheng TC, Karnon J. Estimating the reference incremental cost-effectiveness ratio for the Australian health system. Pharmacoeconomics. 2018;36(2):239-252. doi:10.1007/s40273-017-0585-2
 Harris AH, Hill SR, Chin G, Li JJ, Walkom E. The role of value for money in public insurance coverage decisions for drugs in Australia: a retrospective analysis 1994-2004. Med Decis Making. 2008;28(5):713-722. doi:10.1177/0272989X08315247
 Murphy P, Griffin S, Walker S, et al. Cost-effectiveness thresholds in policy and practice: do HTA guidelines align with estimates of health opportunity cost? Health Econ Policy Law. 2026. doi:10.1017/S1744133126100395

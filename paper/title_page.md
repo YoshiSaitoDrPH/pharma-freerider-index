@@ -13,17 +13,17 @@
 
 **Corresponding author:** Yoshiyuki Saito, PharmD, DrPH. Graduate School of Business Administration (Keio Business School), Keio University, 4-1-1 Hiyoshi, Kohoku-ku, Yokohama, Kanagawa 223-8526, Japan [address to be confirmed]. E-mail: saito.yoshiyuki.86x@kyoto-u.jp. ORCID: 0000-0002-8226-9219
 
-**Précis:** A five-component index shows that payment and adoption channels of pharmaceutical free-riding are nearly independent, so price-only comparisons misidentify countries and levers.
+**Précis:** A five-component index shows that payment and adoption channels of pharmaceutical free-riding are only weakly related, so price-only comparisons misidentify countries and levers.
 
-**Word count:** [insert from build log] (excluding abstract, references, figure legends, tables, appendices)
+**Word count:** 3,984 (main text including section headings; excluding abstract, references, figure legends, tables, appendices). Abstract: 248.
 
-**Number of pages:** [insert]
+**Number of pages:** 25 (main manuscript file, including references)
 
 **Number of figures:** 3 (Figure 1 has parts A and B; 4 graphic elements)
 
 **Number of tables:** 2
 
-**Appendices/supplemental materials:** 1 file. Pages: [insert]; Figures: 4; Tables: 11
+**Appendices/supplemental materials:** 1 file (for online publication). Pages: 14; Figures: 4 (S1-S4); Tables: 13 (S1-S11, including S9b and S9c) plus Appendix S12 (ELEVATE-GenAI checklist)
 
 **Authorship Confirmation:** All authors certify that they meet the ICMJE criteria for authorship.
 
